@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:clickable="true"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".Accueil_activity"
+    tools:showIn="@layout/activity_magasin">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="389dp"
+        android:layout_height="119dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="20dp"
+        android:minHeight="200dp"
+        app:cardBackgroundColor="#FF9800"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="10dp"
+        app:cardPreventCornerOverlap="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:padding="10dp">
+
+            <ImageView
+                android:layout_width="88dp"
+                android:layout_height="75dp"
+                android:adjustViewBounds="true"
+                android:cropToPadding="true"
+                android:elevation="44dp"
+                android:src="@drawable/carrefour" />
+
+            <LinearLayout
+                android:layout_width="275dp"
+                android:layout_height="93dp"
+                android:layout_gravity="center_vertical"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Carrefour"
+                    android:textColor="#FCFCFC"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="Adresse : "
+                    android:textColor="#FCFCFC"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="Promos en cours : "
+                    android:textColor="#FCFCFC"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>
