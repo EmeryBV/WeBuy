@@ -4,36 +4,14 @@
     <string name="title_activity_menu">menu</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-
+    <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
 
-
-    <!--Accueil-->
-    <string name="TitreSection1">Chercher un produit</string>
-    <string name="DescriptionSection1">Faites des recherches en selectionnant le magasin pret de chez vous.</string>
-    <string name="TitreSection2">Ajouter un produit</string>
-    <string name="DescriptionSection2">Vous avez trouver une promotion, partagez-la! </string>
-    <string name="TitreSection3">Vos groupes d\'achat</string>
-    <string name="DescriptionSection3">Consulter les groupes où vous vous êtes inscrit.</string>
-    <string name="TitreSection4">Historique</string>
-    <string name="DescriptionSection4">Consulter votre historique</string>
-
-<!-- master_bottom_navigation-->
-    <string name="Home">Home</string>
-    <string name="Profil">Profil</string>
-    <string name="Connect">Se connecter</string>
-    <string name="Notification">Notification</string>
-    <string name="menu">Menu</string>
-
-<!--    menu-->
-    <string name="menu_accueil">Accueil</string>
-    <string name="menu_magasins">Magasins</string>
-    <string name="menu_achats">Achats</string>
-    <string name="menu_option">Option</string>
-    <string name="menu_amis">Amis</string>
-    <string name="menu_connection">Connexion</string>
-    <string name="menu_DarkMode">Mode nuit</string>
-
-
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_tools">Tools</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_send">Send</string>
 </resources>
