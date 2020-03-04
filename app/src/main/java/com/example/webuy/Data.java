@@ -14,7 +14,22 @@ public class Data {
         remplirListePromotions();
     }
 
-    public ArrayList<Magasin> getMagasins() {
+    public static ArrayList<Magasin> getMagasins() {
+
+        Magasin m1 = new Magasin(1,"Carrefour","1 rue Les rosiers",37200,"Tours");
+        Magasin m2 = new Magasin(2,"Casino","2 rue Les rosiers",37200,"Tours");
+        Magasin m3 = new Magasin(3,"Leclerc","3 rue Les rosiers",37200,"Tours");
+        Magasin m4 = new Magasin(4,"Bricorama","4 rue Les rosiers",37200,"Tours");
+        Magasin m5 = new Magasin(4,"La Halle","5 rue Les rosiers",37200,"Tours");
+        Magasin m6 = new Magasin(4,"Darty","6 rue Les rosiers",37200,"Tours");
+        ArrayList<Magasin> magasins = new ArrayList<>();
+        magasins.add(m1);
+        magasins.add(m2);
+        magasins.add(m3);
+        magasins.add(m4);
+        magasins.add(m5);
+        magasins.add(m6);
+
         return magasins;
     }
 
@@ -30,14 +45,14 @@ public class Data {
         this.promotions = promotions;
     }
 
-    private void remplirListeMagasins() {
+    private static void remplirListeMagasins() {
         Magasin m1 = new Magasin(1,"Carrefour","1 rue Les rosiers",37200,"Tours");
         Magasin m2 = new Magasin(2,"Casino","2 rue Les rosiers",37200,"Tours");
         Magasin m3 = new Magasin(3,"Leclerc","3 rue Les rosiers",37200,"Tours");
         Magasin m4 = new Magasin(4,"Bricorama","4 rue Les rosiers",37200,"Tours");
         Magasin m5 = new Magasin(4,"La Halle","5 rue Les rosiers",37200,"Tours");
         Magasin m6 = new Magasin(4,"Darty","6 rue Les rosiers",37200,"Tours");
-
+        ArrayList<Magasin> magasins = new ArrayList<>();
         magasins.add(m1);
         magasins.add(m2);
         magasins.add(m3);
