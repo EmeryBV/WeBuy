@@ -1,16 +1,16 @@
-package com.example.webuy.ui.gallery;
+package com.example.webuy.ui.promotions;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class GalleryViewModel extends ViewModel {
+public class PromotionsViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public GalleryViewModel() {
+    public PromotionsViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is gallery fragment");
+        mText.setValue("Ici, promotions fragment.");
     }
 
     public LiveData<String> getText() {
