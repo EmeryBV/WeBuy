@@ -20,7 +20,8 @@
         app:cardBackgroundColor="#FF9800"
         app:cardCornerRadius="16dp"
         app:cardElevation="10dp"
-        app:cardPreventCornerOverlap="false">
+        app:cardPreventCornerOverlap="false"
+        android:clickable="true">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -44,6 +45,7 @@
                 android:padding="10dp">
 
                 <TextView
+                    android:id="@+id/magasin"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Carrefour"
@@ -52,7 +54,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/adresse"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
@@ -62,6 +64,7 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/promotions"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
