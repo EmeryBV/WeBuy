@@ -1,13 +1,15 @@
-package com.example.webuy;
+package com.example.webuy.ui.magasins;
 
 public class Magasin {
 
+    private int mId;
     private String mNom;
     private String mRue;
     private int mCodePostal;
     private String mVille;
 
-    public Magasin(String nom, String rue, int codePostal, String ville, String complement) {
+    public Magasin(int id, String nom, String rue, int codePostal, String ville, String complement) {
+        mId = id;
         mNom = nom;
         mRue = rue;
         mCodePostal = codePostal;
@@ -15,11 +17,20 @@ public class Magasin {
         mComplement = complement;
     }
 
-    public Magasin(String nom, String rue, int codePostal, String ville) {
+    public Magasin(int id, String nom, String rue, int codePostal, String ville) {
+        mId = id;
         mNom = nom;
         mRue = rue;
         mCodePostal = codePostal;
         mVille = ville;
+    }
+
+    public int getId() {
+        return mId;
+    }
+
+    public void setId(int id) {
+        this.mId = id;
     }
 
     public String getNom() {
