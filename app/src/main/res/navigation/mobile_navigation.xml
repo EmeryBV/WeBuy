@@ -20,19 +20,19 @@
     <fragment
         android:id="@+id/nav_slideshow"
         android:name="com.example.webuy.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
+        android:label="@string/menu_achats"
         tools:layout="@layout/fragment_slideshow" />
 
     <fragment
         android:id="@+id/nav_tools"
         android:name="com.example.webuy.ui.tools.ToolsFragment"
-        android:label="@string/menu_tools"
+        android:label="@string/menu_option"
         tools:layout="@layout/fragment_tools" />
 
     <fragment
         android:id="@+id/nav_share"
         android:name="com.example.webuy.ui.share.ShareFragment"
-        android:label="@string/menu_share"
+        android:label="@string/menu_amis"
         tools:layout="@layout/fragment_share" />
 
     <fragment
