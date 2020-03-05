@@ -1,4 +1,20 @@
 <resources>
     <string name="app_name">WeBuy</string>
+    <string name="title_activity_menu">menu</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="action_settings">Settings</string>
+    <string name="nav_header_title">YouBuy</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="menu_accueil">Accueil</string>
+    <string name="menu_magasins">Magasins</string>
+    <string name="menu_achats">Achats</string>
+    <string name="menu_option">Option</string>
+    <string name="menu_amis">Amis</string>
+    <string name="menu_connection">Connexion</string>
+    <string name="accueil_DernièresOffres">Dernières offres :</string>
+    <string name="accueil_helloMsg">Bonjour !</string>
+    <string name="accueil_seeAll">Voir tout</string>
+    <string name="accueil_friendActivites">Actualité de vos amis</string>
 </resources>
