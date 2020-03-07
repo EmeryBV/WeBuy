@@ -1,8 +1,15 @@
 package com.appsnipp.schooleducation;
 
 import android.content.Context;
+<<<<<<< Updated upstream:app/src/androidTest/java/com/example/webuy/ExampleInstrumentedTest.java
+
+import androidx.test.platform.app.InstrumentationRegistry;
+
+import androidx.test.runner.AndroidJUnit4;
+=======
 import android.support.test.InstrumentationRegistry;
 import android.support.test.runner.AndroidJUnit4;
+>>>>>>> Stashed changes:app/src/androidTest/java/com/appsnipp/schooleducation/ExampleInstrumentedTest.java
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
