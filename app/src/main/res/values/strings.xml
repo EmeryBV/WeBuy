@@ -8,8 +8,6 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
 
-<<<<<<< Updated upstream
-=======
 
     <!--Accueil-->
     <string name="TitreSection1">Chercher un produit</string>
@@ -29,17 +27,13 @@
     <string name="menu">Menu</string>
 
 <!--    menu-->
->>>>>>> Stashed changes
     <string name="menu_accueil">Accueil</string>
     <string name="menu_magasins">Magasins</string>
     <string name="menu_achats">Achats</string>
     <string name="menu_option">Option</string>
     <string name="menu_amis">Amis</string>
     <string name="menu_connection">Connexion</string>
-<<<<<<< Updated upstream
-=======
     <string name="menu_DarkMode">Mode nuit</string>
 
 
->>>>>>> Stashed changes
 </resources>
