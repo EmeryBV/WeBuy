@@ -7,7 +7,7 @@
         android:title="@string/menu" />
 
     <item
-        android:id="@+id/navigationNotification"
+        android:id="@+id/navigationMyCourses"
         android:icon="@drawable/notification"
         android:title="@string/Notification" />
 
@@ -17,12 +17,12 @@
         android:title="@string/Home" />
 
     <item
-        android:id="@+id/navigationProfil"
+        android:id="@+id/navigationSearch"
         android:icon="@drawable/ic_user"
         android:title="@string/Profil" />
 
     <item
-        android:id="@+id/navigationConnexion"
+        android:id="@+id/navigationMyProfile"
         android:icon="@drawable/connection"
         android:title="@string/menu_connection" />
 

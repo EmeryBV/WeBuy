@@ -1,6 +1,5 @@
 package com.appsnipp.schooleducation;
 
-import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -19,8 +18,6 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
-import com.appsnipp.schooleducation.ui.login.LoginActivity;
-
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -34,13 +31,13 @@ public class MainActivity extends AppCompatActivity
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             Fragment fragment;
             switch (item.getItemId()) {
-                case R.id.navigationNotification:
+                case R.id.navigationMyProfile:
                     return true;
-                case R.id.navigationProfil:
+                case R.id.navigationMyCourses:
                     return true;
                 case R.id.navigationHome:
                     return true;
-                case  R.id.navigationConnexion:
+                case  R.id.navigationSearch:
                     return true;
                 case  R.id.navigationMenu:
                     DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -98,14 +95,12 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-      if (id == R.id.nav_home) {
+      if (id == R.id.nav_gallery) {
 
-        } else if (id == R.id.nav_friends) {
+        } else if (id == R.id.nav_slideshow) {
 
 
-        } else if (id == R.id.nav_connexion) {
-          Intent intent = new Intent(this, LoginActivity.class);
-          startActivity(intent);
+        } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.dark_mode) {
             //code for setting dark mode
