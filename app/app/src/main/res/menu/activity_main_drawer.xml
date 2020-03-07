@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home"
+            android:title="@string/menu_accueil" />
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/ic_menu_magasins"
+            android:title="@string/menu_magasins" />
+        <item
+            android:id="@+id/nav_slideshow"
+            android:icon="@drawable/caddie"
+            android:title="@string/menu_achats" />
+        <item
+            android:id="@+id/nav_send"
+            android:icon="@drawable/connection"
+            android:title="@string/menu_connection" />
+        <item
+            android:id="@+id/nav_share"
+            android:icon="@drawable/groupe"
+            android:title="@string/menu_amis" />
+    </group>
+
+
+
+    <item android:title="">
+        <menu>
+
+
+            <item
+            android:id="@+id/nav_tools"
+            android:icon="@drawable/ic_settings"
+            android:title="@string/menu_option">
+
+            </item>
+
+
+            <item
+                android:id="@+id/dark_mode"
+                android:icon="@drawable/nuit"
+                android:title="@string/menu_DarkMode" />
+        </menu>
+    </item>
+
+
+</menu>
