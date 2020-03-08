@@ -20,12 +20,13 @@
 
             <!--Example with RelativeLayout and Gradient Drawable -->
             <!-- for Recycler view use any of the layout as model-->
+
             <TextView
                 style="@style/viewParent.headerText"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:text="Youbuy" />
+                android:text="@string/app_name" />
 
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
@@ -162,20 +163,22 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:minHeight="100dp"
-                    gl:start_color="@color/gradientOrange2"
+                    android:padding="10dp"
                     gl:end_color="@color/gradientOrange3"
                     gl:orientation="LEFT_RIGHT"
-                    android:padding="10dp">
+                    gl:start_color="@color/gradientOrange2">
 
                     <TextView
                         android:id="@+id/textViewSub4Title"
-                        android:text="@string/TitreSection4"
-                        style="@style/viewParent.headerText.HomeCardTitle" />
+                        style="@style/viewParent.headerText.HomeCardTitle"
+                        android:text="@string/TitreSection4" />
 
                     <TextView
-                        android:text="@string/DescriptionSection4"
                         style="@style/viewParent.headerText.homeCardContent"
-                        android:layout_below="@id/textViewSub4Title"/>
+                        android:layout_width="325dp"
+                        android:layout_height="66dp"
+                        android:layout_below="@id/textViewSub4Title"
+                        android:text="@string/DescriptionSection4" />
 
                     <ImageView
                         style="@style/homeCardImage"
