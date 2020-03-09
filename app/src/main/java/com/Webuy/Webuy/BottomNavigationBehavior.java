@@ -1,4 +1,4 @@
-package com.appsnipp.schooleducation;
+package com.Webuy.Webuy;
 
 /**
  * Created by kapil on 05/10/18.

@@ -1,4 +1,4 @@
-package com.appsnipp.schooleducation;
+package com.Webuy.Webuy;
 
 import android.os.Build;
 import android.os.Bundle;
@@ -17,6 +17,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+
+import com.appsnipp.schooleducation.R;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
