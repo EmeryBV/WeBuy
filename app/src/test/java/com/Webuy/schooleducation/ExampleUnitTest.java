@@ -1,4 +1,4 @@
-package com.appsnipp.schooleducation;
+package com.Webuy.schooleducation;
 
 import org.junit.Test;
 
