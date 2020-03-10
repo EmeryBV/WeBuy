@@ -1,8 +1,4 @@
-<<<<<<< Updated upstream:app/src/main/java/com/Webuy/Webuy/MainActivity.java
-package com.Webuy.Webuy;
-=======
-package com.appsnipp.Webuy;
->>>>>>> Stashed changes:app/src/main/java/com/appsnipp/Webuy/MainActivity.java
+package com.appsnipp.schooleducation;
 
 import android.content.Intent;
 import android.os.Build;
@@ -23,19 +19,13 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
-<<<<<<< Updated upstream:app/src/main/java/com/Webuy/Webuy/MainActivity.java
-import com.appsnipp.schooleducation.R;
-=======
-import com.appsnipp.Webuy.ui.login.LoginActivity;
-
->>>>>>> Stashed changes:app/src/main/java/com/appsnipp/Webuy/MainActivity.java
+import com.appsnipp.schooleducation.ui.login.LoginActivity;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private BottomNavigationView bottomNavigationView;
 
-    DrawerLayout drawer ;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -46,16 +36,14 @@ public class MainActivity extends AppCompatActivity
             switch (item.getItemId()) {
                 case R.id.navigationMyProfile:
                     return true;
-                case R.id.navigationNotification:
+                case R.id.navigationMyCourses:
                     return true;
                 case R.id.navigationHome:
                     return true;
-                case  R.id.navigationConnection:
-
-                    finish();
+                case  R.id.navigationSearch:
                     return true;
                 case  R.id.navigationMenu:
-                   drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+                    DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
                     drawer.openDrawer(GravityCompat.START);
                     return true;
             }
@@ -93,11 +81,7 @@ public class MainActivity extends AppCompatActivity
 
     }
 
-
-
-
-
-        @Override
+    @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
@@ -116,14 +100,12 @@ public class MainActivity extends AppCompatActivity
 
       if (id == R.id.nav_home) {
 
-        } else if (id == R.id.nav_buy) {
-
-      }else if (id == R.id.nav_connexion) {
-          Intent i = new Intent(MainActivity.this, LoginActivity.class);
-          //on lance l'intent, cela a pour effet de stoper l'activité courante et lancer une autre activite ici SecondActivite
-          startActivity(i);
-
         } else if (id == R.id.nav_friends) {
+
+
+        } else if (id == R.id.nav_connexion) {
+          Intent intent = new Intent(this, LoginActivity.class);
+          startActivity(intent);
 
         } else if (id == R.id.dark_mode) {
             //code for setting dark mode

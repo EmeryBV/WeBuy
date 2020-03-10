@@ -1,8 +1,4 @@
-<<<<<<< Updated upstream:app/src/main/java/com/Webuy/Webuy/BottomNavigationBehavior.java
-package com.Webuy.Webuy;
-=======
-package com.appsnipp.Webuy;
->>>>>>> Stashed changes:app/src/main/java/com/appsnipp/Webuy/BottomNavigationBehavior.java
+package com.appsnipp.schooleducation;
 
 /**
  * Created by kapil on 05/10/18.
