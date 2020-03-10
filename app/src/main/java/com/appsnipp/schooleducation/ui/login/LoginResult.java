@@ -1,4 +1,4 @@
-package com.appsnipp.Webuy.ui.login;
+package com.appsnipp.schooleducation.ui.login;
 
 import android.support.annotation.Nullable;
 

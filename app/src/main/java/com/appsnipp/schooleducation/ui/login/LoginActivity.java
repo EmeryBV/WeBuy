@@ -1,4 +1,4 @@
-package com.appsnipp.Webuy.ui.login;
+package com.appsnipp.schooleducation.ui.login;
 
 import android.app.Activity;
 import android.arch.lifecycle.Observer;
@@ -18,9 +18,9 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.appsnipp.Webuy.R;
-import com.appsnipp.Webuy.ui.login.LoginViewModel;
-import com.appsnipp.Webuy.ui.login.LoginViewModelFactory;
+import com.appsnipp.schooleducation.R;
+import com.appsnipp.schooleducation.ui.login.LoginViewModel;
+import com.appsnipp.schooleducation.ui.login.LoginViewModelFactory;
 
 public class LoginActivity extends AppCompatActivity {
 

@@ -1,11 +1,11 @@
-package com.appsnipp.Webuy.ui.login;
+package com.appsnipp.schooleducation.ui.login;
 
 import android.arch.lifecycle.ViewModel;
 import android.arch.lifecycle.ViewModelProvider;
 import android.support.annotation.NonNull;
 
-import com.appsnipp.Webuy.data.LoginDataSource;
-import com.appsnipp.Webuy.data.LoginRepository;
+import com.appsnipp.schooleducation.data.LoginDataSource;
+import com.appsnipp.schooleducation.data.LoginRepository;
 
 /**
  * ViewModel provider factory to instantiate LoginViewModel.

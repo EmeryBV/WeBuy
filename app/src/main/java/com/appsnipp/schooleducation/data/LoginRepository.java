@@ -1,6 +1,6 @@
-package com.appsnipp.Webuy.data;
+package com.appsnipp.schooleducation.data;
 
-import com.appsnipp.Webuy.data.model.LoggedInUser;
+import com.appsnipp.schooleducation.data.model.LoggedInUser;
 
 /**
  * Class that requests authentication and user information from the remote data source and
