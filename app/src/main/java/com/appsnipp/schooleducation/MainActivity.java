@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             Fragment fragment;
             switch (item.getItemId()) {
+
                 case R.id.navigationProfil:
                     return true;
                 case R.id.navigationConnexion:
@@ -41,6 +42,15 @@ public class MainActivity extends AppCompatActivity
                 case R.id.navigationHome:
                     return true;
                 case  R.id.navigationNotification:
+
+                case R.id.navigationNotification:
+                    return true;
+                case R.id.navigationProfil:
+                    return true;
+                case R.id.navigationHome:
+                    return true;
+                case  R.id.navigationConnexion:
+
                     return true;
                 case  R.id.navigationMenu:
                     DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
