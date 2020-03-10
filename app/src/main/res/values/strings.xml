@@ -19,14 +19,14 @@
     <string name="TitreSection4">Historique</string>
     <string name="DescriptionSection4">Consulter votre historique</string>
 
-<!-- master_bottom_navigation-->
+    <!-- master_bottom_navigation-->
     <string name="Home">Home</string>
     <string name="Profil">Profil</string>
     <string name="Connect">Se connecter</string>
     <string name="Notification">Notification</string>
     <string name="menu">Menu</string>
 
-<!--    menu-->
+    <!--    menu-->
     <string name="menu_accueil">Accueil</string>
     <string name="menu_magasins">Magasins</string>
     <string name="menu_achats">Achats</string>
@@ -34,6 +34,15 @@
     <string name="menu_amis">Amis</string>
     <string name="menu_connection">Connexion</string>
     <string name="menu_DarkMode">Mode nuit</string>
+    <string name="title_activity_login">Sign in</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
 
 
 </resources>
