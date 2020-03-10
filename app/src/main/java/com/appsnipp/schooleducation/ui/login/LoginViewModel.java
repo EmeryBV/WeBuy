@@ -1,14 +1,14 @@
-package com.appsnipp.Webuy.ui.login;
+package com.appsnipp.schooleducation.ui.login;
 
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.ViewModel;
 import android.util.Patterns;
 
-import com.appsnipp.Webuy.data.LoginRepository;
-import com.appsnipp.Webuy.data.Result;
-import com.appsnipp.Webuy.data.model.LoggedInUser;
-import com.appsnipp.Webuy.R;
+import com.appsnipp.schooleducation.data.LoginRepository;
+import com.appsnipp.schooleducation.data.Result;
+import com.appsnipp.schooleducation.data.model.LoggedInUser;
+import com.appsnipp.schooleducation.R;
 
 public class LoginViewModel extends ViewModel {
 

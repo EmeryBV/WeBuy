@@ -1,4 +1,4 @@
-package com.appsnipp.Webuy.data.model;
+package com.appsnipp.schooleducation.data.model;
 
 /**
  * Data class that captures user information for logged in users retrieved from LoginRepository
