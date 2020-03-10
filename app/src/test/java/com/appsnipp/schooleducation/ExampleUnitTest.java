@@ -1,8 +1,4 @@
-<<<<<<< Updated upstream:app/src/test/java/com/Webuy/schooleducation/ExampleUnitTest.java
-package com.Webuy.schooleducation;
-=======
-package com.appsnipp.Webuy;
->>>>>>> Stashed changes:app/src/test/java/com/Webuy/Webuy/ExampleUnitTest.java
+package com.appsnipp.schooleducation;
 
 import org.junit.Test;
 
