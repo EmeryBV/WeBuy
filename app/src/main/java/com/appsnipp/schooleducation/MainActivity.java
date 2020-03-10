@@ -35,8 +35,6 @@ public class MainActivity extends AppCompatActivity
             Fragment fragment;
             switch (item.getItemId()) {
 
-
-
                 case R.id.navigationNotification:
                     return true;
                 case R.id.navigationProfil:
