@@ -35,13 +35,7 @@ public class MainActivity extends AppCompatActivity
             Fragment fragment;
             switch (item.getItemId()) {
 
-                case R.id.navigationProfil:
-                    return true;
-                case R.id.navigationConnexion:
-                    return true;
-                case R.id.navigationHome:
-                    return true;
-                case  R.id.navigationNotification:
+
 
                 case R.id.navigationNotification:
                     return true;
