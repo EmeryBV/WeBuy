@@ -3,7 +3,9 @@ package com.appsnipp.schooleducation;
 import android.app.Activity;
 import android.os.Bundle;
 
-class LoginActivity extends Activity {
+import androidx.appcompat.app.AppCompatActivity;
+
+class LoginActivity extends AppCompatActivity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

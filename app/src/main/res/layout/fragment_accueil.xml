@@ -7,7 +7,7 @@
     xmlns:gl="http://schemas.android.com/apk/res-auto"
     tools:context=".AccueilFragment">
 
-    <android.support.v4.widget.NestedScrollView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -27,7 +27,7 @@
                 android:gravity="center"
                 android:text="@string/app_name" />
 
-            <android.support.v7.widget.CardView
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:cardCornerRadius="15dp"
@@ -64,14 +64,14 @@
                         android:src="@drawable/caddie" />
 
                 </RelativeLayout>
-            </android.support.v7.widget.CardView>
+            </androidx.cardview.widget.CardView>
 
 
             <!--if the second one is used as model for recyclerView, refer:
             https://appsnipp.com/gradient-layout-for-dynamic-gradients-in-android-without-drawable-library/
             -->
 
-            <android.support.v7.widget.CardView
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:cardCornerRadius="15dp"
@@ -109,10 +109,10 @@
                         style="@style/homeCardImage" />
 
                 </net.colindodd.gradientlayout.GradientRelativeLayout>
-            </android.support.v7.widget.CardView>
+            </androidx.cardview.widget.CardView>
 
 
-            <android.support.v7.widget.CardView
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:cardCornerRadius="15dp"
@@ -148,10 +148,10 @@
                         android:src="@drawable/groupe" />
 
                 </net.colindodd.gradientlayout.GradientRelativeLayout>
-            </android.support.v7.widget.CardView>
+            </androidx.cardview.widget.CardView>
 
 
-            <android.support.v7.widget.CardView
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:cardCornerRadius="15dp"
@@ -187,10 +187,10 @@
                         android:src="@drawable/historique" />
 
                 </net.colindodd.gradientlayout.GradientRelativeLayout>
-            </android.support.v7.widget.CardView>
+            </androidx.cardview.widget.CardView>
 
 
         </LinearLayout>
-    </android.support.v4.widget.NestedScrollView>
+    </androidx.core.widget.NestedScrollView>
 
 </FrameLayout>

@@ -3,17 +3,17 @@ package com.appsnipp.schooleducation;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.design.widget.BottomNavigationView;
-import android.support.design.widget.CoordinatorLayout;
-import android.support.v4.app.Fragment;
-import android.support.v7.app.AppCompatDelegate;
-import android.support.design.widget.NavigationView;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import androidx.annotation.NonNull;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import androidx.fragment.app.Fragment;
+import androidx.appcompat.app.AppCompatDelegate;
+import com.google.android.material.navigation.NavigationView;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
@@ -34,7 +34,9 @@ public class MainActivity extends AppCompatActivity
             Fragment fragment;
             switch (item.getItemId()) {
 
-                case R.id.navigationNotification:
+                case R.id.navigationMagasin:
+                    fragment = new MagasinsFragment();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,fragment).commit();
                     return true;
                 case R.id.navigationProfil:
                     return true;
@@ -99,24 +101,26 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
-        Fragment fragment;
+        Fragment fragment = null;
         switch (item.getItemId()) {
             case R.id.nav_home:
-                fragment = new AccueilFragment();
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,fragment).commit();
+
             case R.id.nav_shop:
                 fragment = new MagasinsFragment();
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,fragment).commit();
+                break;
             case R.id.nav_friends:
 
             case R.id.nav_connexion:
-                Intent secondeActivite = new Intent(this, LoginActivity.class);
+                Intent secondeActivite = new Intent(this, LoginActivity2.class);
                 startActivity(secondeActivite);
+                break;
             case R.id.dark_mode:
                 DarkModePrefManager darkModePrefManager = new DarkModePrefManager(this);
                 darkModePrefManager.setDarkMode(!darkModePrefManager.isNightMode());
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
                 recreate();
+                break;
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

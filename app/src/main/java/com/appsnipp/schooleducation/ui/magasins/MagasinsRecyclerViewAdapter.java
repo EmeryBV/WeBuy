@@ -1,13 +1,12 @@
 package com.appsnipp.schooleducation.ui.magasins;
 
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.appsnipp.schooleducation.Data;
 import com.appsnipp.schooleducation.R;
 import com.appsnipp.schooleducation.ui.promotions.Promotion;
 
