@@ -7,9 +7,9 @@
         android:title="@string/menu" />
 
     <item
-        android:id="@+id/navigationNotification"
+        android:id="@+id/navigationMagasin"
         android:icon="@drawable/notification"
-        android:title="@string/Notification" />
+        android:title="@string/Magasin" />
 
     <item
         android:id="@+id/navigationHome"
