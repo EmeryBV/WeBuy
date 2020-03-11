@@ -60,5 +60,7 @@ public class PromotionsFragment extends Fragment implements DetecteurClicPromoti
 
     public void clicSurRecyclerItem(int idPromotion, View v) {
         Toast.makeText(getContext(), "Clic sur la promotion avec id = "+idPromotion, Toast.LENGTH_LONG).show();
+        PromotionDetailFragment promotionsDetailFragment = PromotionDetailFragment.newInstance(idPromotion);
+        getFragmentManager().beginTransaction().replace(R.id.fragment_container, promotionsDetailFragment).addToBackStack(null).commit();
     }
 }

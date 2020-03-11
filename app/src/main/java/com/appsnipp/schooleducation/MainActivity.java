@@ -34,18 +34,17 @@ public class MainActivity extends AppCompatActivity
             Fragment fragment;
             switch (item.getItemId()) {
 
-                case R.id.navigationMagasin:
+                case R.id.navigationMagasins:
                     fragment = new MagasinsFragment();
                     getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,fragment).commit();
                     return true;
-                case R.id.navigationProfil:
-                    return true;
-                case R.id.navigationHome:
+                case R.id.navigationAccueil:
                     fragment = new AccueilFragment();
                     getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,fragment).commit();
                     return true;
-                case  R.id.navigationConnexion:
-
+                case R.id.navigationAchats:
+                    return true;
+                case  R.id.navigationNotifications:
                     return true;
                 case  R.id.navigationMenu:
                     DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -66,7 +65,6 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -82,7 +80,7 @@ public class MainActivity extends AppCompatActivity
         CoordinatorLayout.LayoutParams layoutParams = (CoordinatorLayout.LayoutParams) bottomNavigationView.getLayoutParams();
         layoutParams.setBehavior(new BottomNavigationBehavior());
 
-        bottomNavigationView.setSelectedItemId(R.id.navigationHome);
+        bottomNavigationView.setSelectedItemId(R.id.navigationAccueil);
 
     }
 

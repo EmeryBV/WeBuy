@@ -45,11 +45,6 @@ public class MagasinsFragment extends Fragment implements DetecteurClicMagasinsR
 
     public void clicSurRecyclerItem(int idMagasin, View v) {
         Toast.makeText(getContext(), "Clic sur le magasin avec id = "+idMagasin, Toast.LENGTH_LONG).show();
-
-        /*
-        Intent secondeActivite = new Intent(getContext(), AchatGroupe_activity.class);
-        secondeActivite.putExtra("idMagasin", idMagasin);
-        startActivity(secondeActivite);*/
         PromotionsFragment promotionsFragment = PromotionsFragment.newInstance(idMagasin);
         getFragmentManager().beginTransaction().replace(R.id.fragment_container, promotionsFragment).addToBackStack(null).commit();
     }

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!--colors for dark mode-->
-    <color name="colorPrimary">#363636</color>
-    <color name="contentBodyColor">#D7000000</color>
+    <color name="colorPrimary">#2B283D</color>
+    <color name="contentBodyColor">#191722</color>
     <color name="contentTextColor">#fff</color>
-    <color name="bottomNavigationBackground">#000000</color>
+    <color name="bottomNavigationBackground">#191722</color>
     <color name="miniTitleColor">#fff</color>
 
     <color name="gradientOrange">#9400D3</color>

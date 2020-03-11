@@ -19,16 +19,16 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="15dp"
+                app:cardCornerRadius="10dp"
                 app:cardPreventCornerOverlap="true"
                 android:layout_marginTop="10dp">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:minHeight="100dp"
-                    android:background="@color/btn_accueil"
-                    android:padding="10dp">
+                    android:minHeight="150dp"
+                    android:background="@drawable/bordure_btn_accueil"
+                    android:padding="15dp">
 
                     <TextView
                         android:id="@+id/textViewSub1Title"
@@ -57,7 +57,7 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="15dp"
+                app:cardCornerRadius="8dp"
                 app:cardPreventCornerOverlap="true"
                 android:layout_marginTop="10dp">
 
@@ -95,7 +95,7 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="15dp"
+                app:cardCornerRadius="8dp"
                 app:cardPreventCornerOverlap="true"
                 android:layout_marginTop="10dp">
 
@@ -133,7 +133,7 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="15dp"
+                app:cardCornerRadius="8dp"
                 app:cardPreventCornerOverlap="true"
                 android:layout_marginTop="10dp">
 

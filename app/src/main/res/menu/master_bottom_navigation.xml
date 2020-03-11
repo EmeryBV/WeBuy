@@ -7,23 +7,23 @@
         android:title="@string/menu" />
 
     <item
-        android:id="@+id/navigationMagasin"
-        android:icon="@drawable/notification"
-        android:title="@string/Magasin" />
+        android:id="@+id/navigationMagasins"
+        android:icon="@drawable/ic_magasins"
+        android:title="@string/magasins" />
 
     <item
-        android:id="@+id/navigationHome"
-        android:icon="@drawable/ic_home"
-        android:title="@string/Home" />
+        android:id="@+id/navigationAccueil"
+        android:icon="@drawable/ic_accueil"
+        android:title="@string/accueil" />
 
     <item
-        android:id="@+id/navigationProfil"
-        android:icon="@drawable/ic_user"
-        android:title="@string/Profil" />
+        android:id="@+id/navigationAchats"
+        android:icon="@drawable/ic_achats"
+        android:title="@string/achats" />
 
     <item
-        android:id="@+id/navigationConnexion"
-        android:icon="@drawable/connection"
-        android:title="@string/menu_connection" />
+        android:id="@+id/navigationNotifications"
+        android:icon="@drawable/ic_notifications"
+        android:title="@string/notifications" />
 
 </menu>

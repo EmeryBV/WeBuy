@@ -20,10 +20,10 @@
     <string name="DescriptionSection4">Consulter votre historique</string>
 
     <!-- master_bottom_navigation-->
-    <string name="Home">Home</string>
-    <string name="Profil">Profil</string>
-    <string name="Connect">Se connecter</string>
-    <string name="Magasin">Magasin</string>
+    <string name="accueil">Accueil</string>
+    <string name="achats">Vos achats</string>
+    <string name="notifications">Notifications</string>
+    <string name="magasins">Magasins</string>
     <string name="menu">Menu</string>
 
     <!--    menu-->
