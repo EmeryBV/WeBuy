@@ -104,15 +104,15 @@ public class MainActivity extends AppCompatActivity
         Fragment fragment = null;
         switch (item.getItemId()) {
             case R.id.nav_home:
-
+                break;
             case R.id.nav_shop:
                 fragment = new MagasinsFragment();
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,fragment).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,fragment).addToBackStack(null).commit();
                 break;
             case R.id.nav_friends:
-
+                break;
             case R.id.nav_connexion:
-                Intent secondeActivite = new Intent(this, LoginActivity2.class);
+                Intent secondeActivite = new Intent(this, LoginActivity.class);
                 startActivity(secondeActivite);
                 break;
             case R.id.dark_mode:

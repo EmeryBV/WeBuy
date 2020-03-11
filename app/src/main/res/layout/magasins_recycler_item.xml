@@ -17,16 +17,14 @@
         android:minHeight="150dp"
         app:cardCornerRadius="8dp"
         app:cardElevation="10dp"
-        app:cardPreventCornerOverlap="false"
-        android:clickable="true">
+        app:cardPreventCornerOverlap="false">
 
         <LinearLayout
             android:background="#fff"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center_vertical"
-            android:padding="10dp"
-            android:clickable="true">
+            android:padding="10dp">
 
             <ImageView
                 android:layout_width="88dp"

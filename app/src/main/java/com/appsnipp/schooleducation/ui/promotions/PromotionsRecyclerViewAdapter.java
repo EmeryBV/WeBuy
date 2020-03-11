@@ -38,7 +38,7 @@ public class PromotionsRecyclerViewAdapter extends RecyclerView.Adapter<Promotio
         conteneur.prix_sans_promo.setText("Prix hors promos: ");
         conteneur.quantite_min.setText("Quantité minimum: "+promotions.get(position).getQuantiteMin());
         conteneur.quantite_requise.setText("Quantité à acheter: "+promotions.get(position).getQuantiteRequise());
-        conteneur.idPromotion = promotions.get(position).getIdMagasin();
+        conteneur.idPromotion = promotions.get(position).getId();
     }
 
     @Override

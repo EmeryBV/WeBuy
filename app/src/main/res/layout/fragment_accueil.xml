@@ -4,8 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:gl="http://schemas.android.com/apk/res-auto"
-    tools:context=".AccueilFragment">
+    tools:context=".AccueilFragment"
+    android:padding="10dp">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -15,17 +15,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
-
-            <!--Example with RelativeLayout and Gradient Drawable -->
-            <!-- for Recycler view use any of the layout as model-->
-
-            <TextView
-                style="@style/viewParent.headerText"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:text="@string/app_name" />
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
@@ -38,7 +27,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:minHeight="100dp"
-                    android:background="@drawable/home_gradient_maths"
+                    android:background="@color/btn_accueil"
                     android:padding="10dp">
 
                     <TextView
@@ -60,16 +49,10 @@
                         style="@style/homeCardImage"
                         android:layout_width="93dp"
                         android:layout_height="68dp"
-                        android:maxHeight="90dp"
-                        android:src="@drawable/caddie" />
+                        android:maxHeight="90dp"/>
 
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
-
-
-            <!--if the second one is used as model for recyclerView, refer:
-            https://appsnipp.com/gradient-layout-for-dynamic-gradients-in-android-without-drawable-library/
-            -->
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
@@ -78,21 +61,20 @@
                 app:cardPreventCornerOverlap="true"
                 android:layout_marginTop="10dp">
 
-                <net.colindodd.gradientlayout.GradientRelativeLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:minHeight="100dp"
-                    gl:start_color="@color/gradientOrange"
-                    gl:end_color="@color/gradientOrange1"
-                    gl:orientation="LEFT_RIGHT"
+                    android:background="@color/btn_accueil"
                     android:padding="10dp">
 
                     <TextView
                         android:id="@+id/textViewSub2Title"
-                        android:text="@string/TitreSection2"
                         style="@style/viewParent.headerText.HomeCardTitle"
-
-                        />
+                        android:layout_width="253dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/TitreSection1"
+                        android:textSize="23dp" />
 
                     <TextView
                         style="@style/viewParent.headerText.homeCardContent"
@@ -102,15 +84,13 @@
                         android:text="@string/DescriptionSection2" />
 
                     <ImageView
+                        style="@style/homeCardImage"
                         android:layout_width="93dp"
                         android:layout_height="68dp"
-                        android:maxHeight="90dp"
-                        android:src="@drawable/add"
-                        style="@style/homeCardImage" />
+                        android:maxHeight="90dp"/>
 
-                </net.colindodd.gradientlayout.GradientRelativeLayout>
+                </RelativeLayout>
             </androidx.cardview.widget.CardView>
-
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
@@ -119,19 +99,20 @@
                 app:cardPreventCornerOverlap="true"
                 android:layout_marginTop="10dp">
 
-                <net.colindodd.gradientlayout.GradientRelativeLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:minHeight="100dp"
-                    gl:end_color="@color/gradientOrange1"
-                    gl:start_color="@color/gradientOrange2"
-                    gl:orientation="LEFT_RIGHT"
+                    android:background="@color/btn_accueil"
                     android:padding="10dp">
 
                     <TextView
                         android:id="@+id/textViewSub3Title"
-                        android:text="@string/TitreSection3"
-                        style="@style/viewParent.headerText.HomeCardTitle" />
+                        style="@style/viewParent.headerText.HomeCardTitle"
+                        android:layout_width="253dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/TitreSection1"
+                        android:textSize="23dp" />
 
                     <TextView
                         style="@style/viewParent.headerText.homeCardContent"
@@ -144,12 +125,10 @@
                         style="@style/homeCardImage"
                         android:layout_width="93dp"
                         android:layout_height="68dp"
-                        android:maxHeight="90dp"
-                        android:src="@drawable/groupe" />
+                        android:maxHeight="90dp"/>
 
-                </net.colindodd.gradientlayout.GradientRelativeLayout>
+                </RelativeLayout>
             </androidx.cardview.widget.CardView>
-
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
@@ -158,24 +137,25 @@
                 app:cardPreventCornerOverlap="true"
                 android:layout_marginTop="10dp">
 
-                <net.colindodd.gradientlayout.GradientRelativeLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:minHeight="100dp"
-                    android:padding="10dp"
-                    gl:end_color="@color/gradientOrange3"
-                    gl:orientation="LEFT_RIGHT"
-                    gl:start_color="@color/gradientOrange2">
+                    android:background="@color/btn_accueil"
+                    android:padding="10dp">
 
                     <TextView
                         android:id="@+id/textViewSub4Title"
                         style="@style/viewParent.headerText.HomeCardTitle"
-                        android:text="@string/TitreSection4" />
+                        android:layout_width="253dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/TitreSection1"
+                        android:textSize="23dp" />
 
                     <TextView
                         style="@style/viewParent.headerText.homeCardContent"
-                        android:layout_width="325dp"
-                        android:layout_height="66dp"
+                        android:layout_width="237dp"
+                        android:layout_height="67dp"
                         android:layout_below="@id/textViewSub4Title"
                         android:text="@string/DescriptionSection4" />
 
@@ -183,12 +163,10 @@
                         style="@style/homeCardImage"
                         android:layout_width="93dp"
                         android:layout_height="68dp"
-                        android:maxHeight="90dp"
-                        android:src="@drawable/historique" />
+                        android:maxHeight="90dp"/>
 
-                </net.colindodd.gradientlayout.GradientRelativeLayout>
+                </RelativeLayout>
             </androidx.cardview.widget.CardView>
-
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>

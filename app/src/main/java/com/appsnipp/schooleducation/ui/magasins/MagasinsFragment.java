@@ -51,6 +51,6 @@ public class MagasinsFragment extends Fragment implements DetecteurClicMagasinsR
         secondeActivite.putExtra("idMagasin", idMagasin);
         startActivity(secondeActivite);*/
         PromotionsFragment promotionsFragment = PromotionsFragment.newInstance(idMagasin);
-        getFragmentManager().beginTransaction().replace(android.R.id.content, promotionsFragment).commit();
+        getFragmentManager().beginTransaction().replace(R.id.fragment_container, promotionsFragment).addToBackStack(null).commit();
     }
 }
