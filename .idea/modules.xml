@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/WeBuy.iml" filepath="$PROJECT_DIR$/WeBuy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Webuy.iml" filepath="$PROJECT_DIR$/Webuy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/Webuy-app.iml" filepath="$PROJECT_DIR$/app/Webuy-app.iml" group="Webuy/app" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/git-Webuy.iml" filepath="$PROJECT_DIR$/git-Webuy.iml" group="Webuy" />
     </modules>
   </component>
 </project>
