@@ -112,7 +112,7 @@ public class MainActivity extends AppCompatActivity
             case R.id.nav_friends:
 
             case R.id.nav_connexion:
-                Intent secondeActivite = new Intent(this, LoginActivity2.class);
+                Intent secondeActivite = new Intent(this, LoginActivity.class);
                 startActivity(secondeActivite);
                 break;
             case R.id.dark_mode:

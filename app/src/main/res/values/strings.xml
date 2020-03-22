@@ -46,12 +46,14 @@
     <string name="invalid_username">Mauvais identifiant</string>
     <string name="invalid_password">Le mot de passe doit faire plus de 5 caractères </string>
     <string name="login_failed">"Erreur connection"</string>
-    <string name="inscription">"S'inscrire"</string>
+    <string name="inscrire">"S'inscrire"</string>
 
     <!--    Inscription-->
     <string name="titreInscription">"Inscription"</string>
     <string name="prénom">"Prénom"</string>
     <string name="Nom">"Nom"</string>
+    <string name="déjàInscrit"><u>"Déjà inscrit ? Connectez-vous içi"</u></string>
+
 
 
 

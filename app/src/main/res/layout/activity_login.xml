@@ -67,7 +67,7 @@
             android:id="@+id/inscription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/inscription"
+            android:text="@string/inscrire"
             android:textColor="#E91E63"
             android:textAlignment="center"
             android:textStyle="bold"
