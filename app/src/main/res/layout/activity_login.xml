@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity2">
+    tools:context=".LoginActivity">
 
     <LinearLayout
         android:orientation="vertical" android:layout_width="match_parent"
@@ -12,14 +12,14 @@
         android:paddingRight="50dp"
         android:paddingLeft="50dp"
         android:paddingTop="130dp"
-        android:background="#2B283D">
+        android:background="@color/whiteBodyColor">
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/titreConnection"
-            android:textColor="#E91E63"
+            android:textColor="@color/gradientOrange"
             android:textSize="50sp"
             android:textStyle="bold"
             android:textAlignment="center"
@@ -38,6 +38,7 @@
             android:hint="@string/prompt_email"
             android:textColorHint="#7E7E7E"
             android:textColor="#7E7E7E"
+            android:backgroundTint= "@color/gradientOrange"
             />
 
 
@@ -50,6 +51,7 @@
             android:ems="10"
             android:layout_marginBottom="20dp"
             android:textColor="#7E7E7E"
+            android:backgroundTint= "@color/gradientOrange"
             />
 
         <Button
@@ -68,7 +70,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/inscrire"
-            android:textColor="#E91E63"
+            android:textColor="@color/gradientOrange"
             android:textAlignment="center"
             android:textStyle="bold"
             />

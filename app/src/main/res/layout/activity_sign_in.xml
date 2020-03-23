@@ -20,7 +20,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#2B283D"
+            android:background="@color/whiteBodyColor"
             android:orientation="vertical"
             android:paddingLeft="50dp"
             android:paddingTop="130dp"
@@ -35,7 +35,7 @@
                 android:layout_marginBottom="80dp"
                 android:text="@string/titreInscription"
                 android:textAlignment="center"
-                android:textColor="#E91E63"
+                android:textColor="@color/gradientOrange"
                 android:textSize="50sp"
                 android:textStyle="bold" />
 
@@ -53,7 +53,9 @@
                         android:layout_width="110dp"
                         android:layout_height="wrap_content"
                         android:text="@string/prénom"
-                        android:textColor="#7E7E7E" />
+                        android:textColor="#7E7E7E"
+
+                        />
 
                     <TextView
                         android:id="@+id/NameTxt"
@@ -74,7 +76,9 @@
                         android:layout_height="50dp"
                         android:layout_marginBottom="20dp"
                         android:ems="10"
-                        android:inputType="textPersonName" />
+                        android:inputType="textPersonName"
+                        android:backgroundTint= "@color/gradientOrange"
+                        />
 
                     <EditText
                         android:id="@+id/name"
@@ -82,7 +86,9 @@
                         android:layout_height="50dp"
                         android:layout_marginBottom="20dp"
                         android:ems="10"
-                        android:inputType="textPersonName" />
+                        android:inputType="textPersonName"
+                        android:backgroundTint= "@color/gradientOrange"
+                        />
 
                 </TableRow>
 
@@ -109,11 +115,10 @@
             <EditText
                 android:id="@+id/email"
                 android:layout_width="300dp"
-
                 android:layout_height="50dp"
                 android:layout_marginBottom="20dp"
                 android:ems="10"
-
+                android:backgroundTint= "@color/gradientOrange"
                 android:inputType="textEmailAddress" />
 
 
@@ -130,7 +135,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"
                 android:ems="10"
-                android:inputType="textPassword" />
+                android:inputType="textPassword"
+                android:backgroundTint= "@color/gradientOrange"
+                />
 
             <Button
                 android:id="@+id/connect"
@@ -149,7 +156,7 @@
                 android:layout_marginTop="15dp"
                 android:text="@string/déjàInscrit"
                 android:textAlignment="center"
-                android:textColor="#E91E63"
+                android:textColor="@color/gradientOrange"
                 android:textStyle="bold" />
 
 

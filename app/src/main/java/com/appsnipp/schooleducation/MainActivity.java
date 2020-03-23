@@ -18,43 +18,16 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.appsnipp.schooleducation.ui.magasins.MagasinsFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    private BottomNavigationView bottomNavigationView;
 
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            Fragment fragment;
-            switch (item.getItemId()) {
-
-                case R.id.navigationMagasin:
-                    fragment = new MagasinsFragment();
-                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,fragment).commit();
-                    return true;
-                case R.id.navigationProfil:
-                    return true;
-                case R.id.navigationHome:
-                    fragment = new AccueilFragment();
-                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,fragment).commit();
-                    return true;
-                case  R.id.navigationConnexion:
-
-                    return true;
-                case  R.id.navigationMenu:
-                    DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-                    drawer.openDrawer(GravityCompat.START);
-                    return true;
-            }
-            return false;
-        }
-    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,15 +49,18 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        bottomNavigationView = findViewById(R.id.navigation);
-        bottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        ImageView menu = (ImageView) findViewById(R.id.menu);
+        menu.setOnClickListener(new View.OnClickListener() {
 
-        CoordinatorLayout.LayoutParams layoutParams = (CoordinatorLayout.LayoutParams) bottomNavigationView.getLayoutParams();
-        layoutParams.setBehavior(new BottomNavigationBehavior());
-
-        bottomNavigationView.setSelectedItemId(R.id.navigationHome);
-
+            @Override
+            public void onClick(View v) {
+                DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+                drawer.openDrawer(GravityCompat.START);
+            }
+        });
     }
+
+
 
     @Override
     public void onBackPressed() {
