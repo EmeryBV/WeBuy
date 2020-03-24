@@ -60,6 +60,7 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:paddingHorizontal="20dp"
+                android:layout_marginBottom="20dp"
                 >
 
                 <androidx.cardview.widget.CardView
@@ -153,10 +154,10 @@
 
                     <TextView
                         android:id="@+id/voir_plus2"
-                        android:layout_width="164dp"
+                        android:layout_width="271dp"
                         android:layout_height="60dp"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginRight="10dp"
+                        android:layout_gravity="right|center"
+                        android:layout_marginTop="15dp"
                         android:layout_weight="10"
                         android:paddingLeft="38dp"
                         android:paddingRight="20dp"
@@ -168,9 +169,8 @@
 
 
                 <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+                    android:layout_width="250dp"
+                    android:layout_height="130dp"
                     app:cardCornerRadius="15dp"
                     app:cardPreventCornerOverlap="true">
 
@@ -178,21 +178,223 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:minHeight="170dp"
-                        android:padding="10dp"
-                        gl:start_color="@color/gradientViolet1"
-                        gl:end_color="@color/gradientViolet"
-                        >
+
+                        gl:end_color="@color/gradientJaune"
+                        gl:start_color="@color/gradientOrange">
 
 
                         <TextView
                             android:id="@+id/promo1"
                             style="@style/viewParent.headerText.HomeCardTitle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="50dp"
+                            android:layout_marginLeft="10dp"
                             android:text="@string/promo1"
-                            android:textSize="25dp" />
+                            android:textSize="16dp" />
+
+                        <TextView
+                            android:id="@+id/prixHorsPromo1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="40dp"
+                            android:text="@string/prixHorsPromo1"
+                            android:textSize="15dp" />
+
+                        <TextView
+                            android:id="@+id/prixPromo1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="60dp"
+                            android:text="@string/prixPromo1"
+                            android:textSize="15dp" />
+
+                        <TextView
+                            android:id="@+id/quantitémin1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="80dp"
+                            android:text="@string/quantitéMin1"
+                            android:textSize="15dp" />
+
+                        <TextView
+                            android:id="@+id/quantitnbr1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="100dp"
+                            android:text="@string/quantitéNbr1"
+                            android:textSize="15dp" />
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/profile_image"
+                            android:layout_width="77dp"
+                            android:layout_height="76dp"
+                            android:layout_marginTop="45dp"
+                            android:layout_marginLeft="150dp"
+                            android:src="@drawable/promo_lait"
+                            gl:civ_border_color="#000000"
+                            gl:civ_border_width="2dp" />
+
 
                     </net.colindodd.gradientlayout.GradientRelativeLayout>
                 </androidx.cardview.widget.CardView>
 
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="130dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="73dp"
+                    app:cardCornerRadius="15dp"
+                    app:cardPreventCornerOverlap="true">
+
+                    <net.colindodd.gradientlayout.GradientRelativeLayout
+                        android:layout_width="250dp"
+                        android:layout_height="match_parent"
+                        android:minHeight="170dp"
+                        android:layout_gravity="right"
+                        gl:end_color="@color/gradientJaune"
+                        gl:start_color="@color/gradientOrange">
+
+
+                        <TextView
+                            android:id="@+id/promo2"
+                            style="@style/viewParent.headerText.HomeCardTitle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginBottom="50dp"
+                            android:text="@string/promo2"
+                            android:textSize="16dp" />
+
+                        <TextView
+                            android:id="@+id/prixHorsPromo2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="40dp"
+                            android:text="@string/prixHorsPromo2"
+                            android:textSize="15dp" />
+
+                        <TextView
+                            android:id="@+id/prixPromo2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="60dp"
+                            android:text="@string/prixPromo2"
+                            android:textSize="15dp" />
+
+                        <TextView
+                            android:id="@+id/quantitémin2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="80dp"
+                            android:text="@string/quantitéMin2"
+                            android:textSize="15dp" />
+
+                        <TextView
+                            android:id="@+id/quantitnbr2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="100dp"
+                            android:text="@string/quantitéNbr2"
+                            android:textSize="15dp" />
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/profile_image2"
+                            android:layout_width="77dp"
+                            android:layout_height="76dp"
+                            android:layout_marginLeft="150dp"
+                            android:layout_marginTop="45dp"
+                            android:src="@drawable/promograndmerecafe"
+                            gl:civ_border_color="#000000"
+                            gl:civ_border_width="2dp" />
+
+
+                    </net.colindodd.gradientlayout.GradientRelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="250dp"
+                    android:layout_height="130dp"
+                    android:layout_marginTop="20dp"
+                    app:cardCornerRadius="15dp"
+                    app:cardPreventCornerOverlap="true">
+
+                    <net.colindodd.gradientlayout.GradientRelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:minHeight="170dp"
+
+                        gl:end_color="@color/gradientJaune"
+                        gl:start_color="@color/gradientOrange">
+
+
+                        <TextView
+                            android:id="@+id/promo3"
+                            style="@style/viewParent.headerText.HomeCardTitle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="50dp"
+                            android:layout_marginLeft="10dp"
+                            android:text="@string/promo3"
+                            android:textSize="16dp" />
+
+                        <TextView
+                            android:id="@+id/prixHorsPromo3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="40dp"
+                            android:text="@string/prixHorsPromo3"
+                            android:textSize="15dp" />
+
+                        <TextView
+                            android:id="@+id/prixPromo3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="60dp"
+                            android:text="@string/prixPromo3"
+                            android:textSize="15dp" />
+
+                        <TextView
+                            android:id="@+id/quantitémin3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="80dp"
+                            android:text="@string/quantitéMin3"
+                            android:textSize="15dp" />
+
+                        <TextView
+                            android:id="@+id/quantitnbr3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="100dp"
+                            android:text="@string/quantitéNbr3"
+                            android:textSize="15dp" />
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/profile_image3"
+                            android:layout_width="77dp"
+                            android:layout_height="76dp"
+                            android:layout_marginTop="45dp"
+                            android:layout_marginLeft="150dp"
+                            android:src="@drawable/promoharibo"
+                            gl:civ_border_color="#000000"
+                            gl:civ_border_width="2dp" />
+
+
+                    </net.colindodd.gradientlayout.GradientRelativeLayout>
+                </androidx.cardview.widget.CardView>
 
             </LinearLayout>
 

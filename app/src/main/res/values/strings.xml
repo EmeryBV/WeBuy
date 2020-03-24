@@ -21,6 +21,25 @@
     <string name="DescriptionSection4">Consulter votre historique</string>
     !--Valeur statique-->
     <string name="promo1">Lait Lactel 10x1L</string>
+    <string name="prixHorsPromo1">Prix hors promo: 8€ </string>
+    <string name="prixPromo1">Prix promo: 6€</string>
+    <string name="quantitéMin1">Quantité min: 2</string>
+    <string name="quantitéNbr1">Quantité à acheter: 4</string>
+
+
+    <string name="promo2">Café Moulu Familial Grand mére</string>
+    <string name="prixHorsPromo2">Prix hors promo: 5.95€ </string>
+    <string name="prixPromo2">Prix promo: 3.96€</string>
+    <string name="quantitéMin2">Quantité min:2 </string>
+    <string name="quantitéNbr2">Quantité à acheter: 4</string>
+
+    <string name="promo3">Haribo bonbon</string>
+    <string name="prixHorsPromo3">Prix hors promo: 2€50 </string>
+    <string name="prixPromo3">Prix promo: 1€90</string>
+    <string name="quantitéMin3">Quantité min:1</string>
+    <string name="quantitéNbr3">Quantité à acheter: 3</string>
+
+
 
     <!-- master_bottom_navigation-->
     <string name="Home">Home</string>
