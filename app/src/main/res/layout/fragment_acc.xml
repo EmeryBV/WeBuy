@@ -35,36 +35,8 @@
                 app:cardPreventCornerOverlap="true"
                 android:layout_marginTop="10dp">
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:minHeight="100dp"
-                    android:background="@drawable/home_gradient_maths"
-                    android:padding="10dp">
 
-                    <TextView
-                        android:id="@+id/textViewSub1Title"
-                        style="@style/viewParent.headerText.HomeCardTitle"
-                        android:layout_width="253dp"
-                        android:layout_height="wrap_content"
-                        android:text="@string/TitreSection1"
-                        android:textSize="23dp" />
 
-                    <TextView
-                        style="@style/viewParent.headerText.homeCardContent"
-                        android:layout_width="237dp"
-                        android:layout_height="67dp"
-                        android:layout_below="@id/textViewSub1Title"
-                        android:text="@string/DescriptionSection1" />
-
-                    <ImageView
-                        style="@style/homeCardImage"
-                        android:layout_width="93dp"
-                        android:layout_height="68dp"
-                        android:maxHeight="90dp"
-                        android:src="@drawable/caddie" />
-
-                </RelativeLayout>
             </androidx.cardview.widget.CardView>
 
 
@@ -88,19 +60,8 @@
                     gl:orientation="LEFT_RIGHT"
                     android:padding="10dp">
 
-                    <TextView
-                        android:id="@+id/textViewSub2Title"
-                        android:text="@string/TitreSection2"
-                        style="@style/viewParent.headerText.HomeCardTitle"
 
-                        />
 
-                    <TextView
-                        style="@style/viewParent.headerText.homeCardContent"
-                        android:layout_width="237dp"
-                        android:layout_height="67dp"
-                        android:layout_below="@id/textViewSub2Title"
-                        android:text="@string/DescriptionSection2" />
 
                     <ImageView
                         android:layout_width="93dp"

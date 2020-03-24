@@ -10,7 +10,6 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingHorizontal="20dp"
         android:layout_gravity="center"
         android:background="@color/contentBodyColor"
         >
@@ -18,165 +17,184 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            >
+            android:orientation="vertical">
 
 
             <!--Example with RelativeLayout and Gradient Drawable -->
             <!-- for Recycler view use any of the layout as model-->
 
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal"
                 android:layout_marginTop="20dp"
-                >
+                android:background="@drawable/border"
+                android:orientation="horizontal"
+                android:paddingBottom="8dp">
+
 
                 <ImageView
                     android:id="@+id/menu"
-                    android:layout_width="30dp"
-                    android:layout_height="25dp"
+                    android:layout_width="68dp"
+                    android:layout_height="33dp"
+                    android:paddingLeft="20dp"
                     android:src="@drawable/icone_menu"
-                    android:tint="@color/darkTextColor"
+                    android:tint="@color/gradientJaune"
+
                     />
 
-                <SearchView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:animationCache="false"
-                    android:clipChildren="false"
-                    android:iconifiedByDefault="false"
-                    android:queryHint="@string/TitreSection1"
-                    android:tint="@color/darkTextColor"
-                    />
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="325dp"
+                    android:layout_height="33dp"
+                    android:paddingLeft="180dp"
+                    android:paddingRight="20dp"
+                    android:src="@drawable/ic_home"
+                    android:tint="@color/gradientJaune" />
+
+
             </LinearLayout>
 
-            <androidx.cardview.widget.CardView
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:cardCornerRadius="15dp"
-                app:cardPreventCornerOverlap="true"
-                android:layout_marginTop="10dp"/>
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingHorizontal="20dp"
+                >
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    app:cardCornerRadius="15dp"
+                    app:cardPreventCornerOverlap="true">
+
+                    <net.colindodd.gradientlayout.GradientRelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:minHeight="170dp"
+                        android:padding="10dp"
+                        gl:end_color="@color/gradientJaune"
+                        gl:start_color="@color/gradientOrange">
 
 
-            <!--if the second one is used as model for recyclerView, refer:
-            https://appsnipp.com/gradient-layout-for-dynamic-gradients-in-android-without-drawable-library/
-            -->
+                        <TextView
+                            android:id="@+id/Bienvenue"
+                            style="@style/viewParent.headerText.HomeCardTitle"
+                            android:text="@string/welcome"
+                            android:textSize="25dp" />
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:cardCornerRadius="15dp"
-                app:cardPreventCornerOverlap="true"
-                android:layout_marginTop="10dp">
+                        <ImageView
+                            android:id="@+id/imageCardView"
+                            style="@style/homeCardImage"
+                            android:layout_width="140dp"
+                            android:layout_height="wrap_content"
+                            android:maxHeight="90dp"
+                            android:paddingTop="10dp"
 
-                <net.colindodd.gradientlayout.GradientRelativeLayout
+                            android:src="@drawable/fox" />
+
+                        <TextView
+                            android:id="@+id/Slogan"
+                            style="@style/viewParent.headerText.homeCardContent"
+                            android:layout_width="188dp"
+                            android:layout_height="63dp"
+                            android:layout_marginTop="56dp"
+                            android:text="@string/Sous_titre"
+                            android:textSize="20dp" />
+
+                    </net.colindodd.gradientlayout.GradientRelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:minHeight="100dp"
-                    gl:start_color="@color/gradientOrange"
-                    gl:end_color="@color/gradientOrange"
-                    android:padding="10dp">
+                    android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/textViewSub2Title"
-                        android:text="@string/TitreSection2"
-                        style="@style/viewParent.headerText.HomeCardTitle"
+                        android:id="@+id/Magasins"
+                        android:layout_width="129dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="@string/magasins"
+                        android:textColor="@color/gradientOrange"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/voir_plus"
+                        android:layout_width="124dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="10"
+                        android:paddingLeft="100dp"
+                        android:paddingRight="20dp"
+                        android:layout_marginTop="20dp"
+                        android:text="@string/voir_plus"
+                        android:textColor="@color/gradientViolet"
 
                         />
+                </LinearLayout>
 
-                    <TextView
-                        style="@style/viewParent.headerText.homeCardContent"
-                        android:layout_width="237dp"
-                        android:layout_height="67dp"
-                        android:layout_below="@id/textViewSub2Title"
-                        android:text="@string/DescriptionSection2" />
-
-                    <ImageView
-                        android:layout_width="93dp"
-                        android:layout_height="68dp"
-                        android:maxHeight="90dp"
-                        android:src="@drawable/add"
-                        style="@style/homeCardImage" />
-
-                </net.colindodd.gradientlayout.GradientRelativeLayout>
-            </androidx.cardview.widget.CardView>
-
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:cardCornerRadius="15dp"
-                app:cardPreventCornerOverlap="true"
-                android:layout_marginTop="10dp">
-
-                <net.colindodd.gradientlayout.GradientRelativeLayout
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:minHeight="100dp"
-                    gl:start_color="@color/gradientOrange"
-                    gl:end_color="@color/gradientOrange"
-                    android:padding="10dp">
+                    android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/textViewSub3Title"
-                        android:text="@string/TitreSection3"
-                        style="@style/viewParent.headerText.HomeCardTitle" />
+                        android:id="@+id/meilleurOffre"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="@string/meilleursOffres"
+                        android:textColor="@color/gradientOrange"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
 
                     <TextView
-                        style="@style/viewParent.headerText.homeCardContent"
-                        android:layout_width="237dp"
-                        android:layout_height="67dp"
-                        android:layout_below="@id/textViewSub3Title"
-                        android:text="@string/DescriptionSection3" />
+                        android:id="@+id/voir_plus2"
+                        android:layout_width="164dp"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="10"
+                        android:paddingLeft="38dp"
+                        android:paddingRight="20dp"
+                        android:text="@string/voir_plus"
+                        android:textColor="@color/gradientViolet"
 
-                    <ImageView
-                        style="@style/homeCardImage"
-                        android:layout_width="93dp"
-                        android:layout_height="68dp"
-                        android:maxHeight="90dp"
-                        android:src="@drawable/groupe" />
-
-                </net.colindodd.gradientlayout.GradientRelativeLayout>
-            </androidx.cardview.widget.CardView>
+                        />
+                </LinearLayout>
 
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:cardCornerRadius="15dp"
-                app:cardPreventCornerOverlap="true"
-                android:layout_marginTop="10dp">
-
-                <net.colindodd.gradientlayout.GradientRelativeLayout
+                <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:minHeight="100dp"
-                    android:padding="10dp"
-                    gl:start_color="@color/gradientOrange"
-                    gl:end_color="@color/gradientOrange">
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    app:cardCornerRadius="15dp"
+                    app:cardPreventCornerOverlap="true">
 
-                    <TextView
-                        android:id="@+id/textViewSub4Title"
-                        style="@style/viewParent.headerText.HomeCardTitle"
-                        android:text="@string/TitreSection4" />
+                    <net.colindodd.gradientlayout.GradientRelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:minHeight="170dp"
+                        android:padding="10dp"
+                        gl:start_color="@color/gradientViolet1"
+                        gl:end_color="@color/gradientViolet"
+                        >
 
-                    <TextView
-                        style="@style/viewParent.headerText.homeCardContent"
-                        android:layout_width="325dp"
-                        android:layout_height="66dp"
-                        android:layout_below="@id/textViewSub4Title"
-                        android:text="@string/DescriptionSection4" />
 
-                    <ImageView
-                        style="@style/homeCardImage"
-                        android:layout_width="93dp"
-                        android:layout_height="68dp"
-                        android:maxHeight="90dp"
-                        android:src="@drawable/historique" />
+                        <TextView
+                            android:id="@+id/promo1"
+                            style="@style/viewParent.headerText.HomeCardTitle"
+                            android:text="@string/promo1"
+                            android:textSize="25dp" />
 
-                </net.colindodd.gradientlayout.GradientRelativeLayout>
-            </androidx.cardview.widget.CardView>
+                    </net.colindodd.gradientlayout.GradientRelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+
+            </LinearLayout>
 
 
         </LinearLayout>

@@ -11,13 +11,16 @@
 
     <!--Accueil-->
     <string name="TitreSection1">Chercher un produit</string>
-    <string name="DescriptionSection1">Faites des recherches en selectionnant le magasin pret de chez vous.</string>
-    <string name="TitreSection2">Ajouter un produit</string>
-    <string name="DescriptionSection2">Vous avez trouver une promotion, partagez-la! </string>
+    <string name="Sous_titre">Partager pour payer moins cher!</string>
+    <string name="magasins">Magasins:</string>
+    <string name="voir_plus"><u>Voir plus</u></string>
+    <string name="meilleursOffres">Les meilleurs offres :</string>
     <string name="TitreSection3">Vos groupes d\'achat</string>
     <string name="DescriptionSection3">Consulter les groupes où vous vous êtes inscrit.</string>
     <string name="TitreSection4">Historique</string>
     <string name="DescriptionSection4">Consulter votre historique</string>
+    !--Valeur statique-->
+    <string name="promo1">Lait Lactel 10x1L</string>
 
     <!-- master_bottom_navigation-->
     <string name="Home">Home</string>
@@ -39,7 +42,7 @@
     <string name="prompt_password">Mot de passe</string>
     <string name="action_sign_in">Sign in or register</string>
     <string name="action_sign_in_short">Sign in</string>
-    <string name="welcome">"Welcome !"</string>
+    <string name="welcome">"Bienvenue sur WeBuy !"</string>
 
 <!--    Connexion-->
     <string name="titreConnection">"Connexion"</string>

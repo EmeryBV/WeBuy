@@ -20,11 +20,13 @@
     <color name="bottomNavigationBackground">#F7F7F7</color>
 
     <!--gradient colors-->
-    <color name="gradientOrange">#F7A23C</color>
+    <color name="gradientJaune">#FFCE00</color>
+    <color name="gradientOrange">#F78D3C</color>
     <color name="gradientOrange1">#FF8E37</color>
     <color name="gradientOrange2">#FF8E37</color>
     <color name="gradientOrange3">#FF5722</color>
     <color name="gradientViolet">#8A52E9</color>
+    <color name="gradientViolet1">#742BEF</color>
     <color name="gradientLightYellow">#FFA72F</color>
     <color name="gradientLightOrange">#FF641A</color>
     <color name="gradientLightYellow2">#FFC92B</color>
