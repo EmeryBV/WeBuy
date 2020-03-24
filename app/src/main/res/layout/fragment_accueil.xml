@@ -5,168 +5,137 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".AccueilFragment"
-    android:padding="10dp">
+    xmlns:gl="http://schemas.android.com/apk/res-auto">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:background="@color/contentBodyColor"
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:cardCornerRadius="10dp"
-                app:cardPreventCornerOverlap="true"
-                android:layout_marginTop="10dp">
 
-                <RelativeLayout
+            <!--Example with RelativeLayout and Gradient Drawable -->
+            <!-- for Recycler view use any of the layout as model-->
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingHorizontal="20dp"
+                android:layout_marginBottom="20dp"
+                >
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    app:cardCornerRadius="15dp"
+                    app:cardPreventCornerOverlap="true">
+
+                    <net.colindodd.gradientlayout.GradientRelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:minHeight="170dp"
+                        android:padding="10dp"
+                        gl:end_color="@color/gradientJaune"
+                        gl:start_color="@color/gradientOrange">
+
+
+                        <TextView
+                            android:id="@+id/Bienvenue"
+                            style="@style/viewParent.headerText.HomeCardTitle"
+                            android:text="@string/welcome"
+                            android:textSize="25dp" />
+
+                        <ImageView
+                            android:id="@+id/imageCardView"
+                            style="@style/homeCardImage"
+                            android:layout_width="140dp"
+                            android:layout_height="wrap_content"
+                            android:maxHeight="90dp"
+                            android:paddingTop="10dp"
+                            android:src="@drawable/renard" />
+
+                        <TextView
+                            android:id="@+id/Slogan"
+                            style="@style/viewParent.headerText.homeCardContent"
+                            android:layout_width="188dp"
+                            android:layout_height="63dp"
+                            android:layout_marginTop="56dp"
+                            android:text="@string/Sous_titre"
+                            android:textSize="20dp" />
+
+                    </net.colindodd.gradientlayout.GradientRelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:minHeight="150dp"
-                    android:background="@drawable/bordure_btn_accueil"
-                    android:padding="15dp">
+                    android:orientation="horizontal"
+                    android:layout_marginTop="20dp">
 
                     <TextView
-                        android:id="@+id/textViewSub1Title"
-                        style="@style/viewParent.headerText.HomeCardTitle"
-                        android:layout_width="253dp"
+                        android:id="@+id/magasins"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/TitreSection1"
-                        android:textSize="23dp" />
+                        android:text="@string/magasins"
+                        android:textColor="@color/gradientOrange"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
 
                     <TextView
-                        style="@style/viewParent.headerText.homeCardContent"
-                        android:layout_width="237dp"
-                        android:layout_height="67dp"
-                        android:layout_below="@id/textViewSub1Title"
-                        android:text="@string/DescriptionSection1" />
+                        android:id="@+id/voir_plus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right|center"
+                        android:layout_weight="10"
+                        android:textSize="15dp"
+                        android:gravity="right"
+                        android:clickable="true"
+                        android:text="@string/voir_tout"
+                        android:textColor="@color/gradientViolet"
+                        android:textStyle="bold"/>
 
-                    <ImageView
-                        style="@style/homeCardImage"
-                        android:layout_width="93dp"
-                        android:layout_height="68dp"
-                        android:maxHeight="90dp"/>
+                </LinearLayout>
 
-                </RelativeLayout>
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:cardCornerRadius="8dp"
-                app:cardPreventCornerOverlap="true"
-                android:layout_marginTop="10dp">
-
-                <RelativeLayout
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:minHeight="100dp"
-                    android:background="@color/btn_accueil"
-                    android:padding="10dp">
+                    android:orientation="horizontal"
+                    android:layout_marginTop="20dp">
 
                     <TextView
-                        android:id="@+id/textViewSub2Title"
-                        style="@style/viewParent.headerText.HomeCardTitle"
-                        android:layout_width="253dp"
+                        android:id="@+id/meilleurOffre"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/TitreSection1"
-                        android:textSize="23dp" />
+                        android:text="@string/meilleursOffres"
+                        android:textColor="@color/gradientOrange"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
 
                     <TextView
-                        style="@style/viewParent.headerText.homeCardContent"
-                        android:layout_width="237dp"
-                        android:layout_height="67dp"
-                        android:layout_below="@id/textViewSub2Title"
-                        android:text="@string/DescriptionSection2" />
-
-                    <ImageView
-                        style="@style/homeCardImage"
-                        android:layout_width="93dp"
-                        android:layout_height="68dp"
-                        android:maxHeight="90dp"/>
-
-                </RelativeLayout>
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:cardCornerRadius="8dp"
-                app:cardPreventCornerOverlap="true"
-                android:layout_marginTop="10dp">
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:minHeight="100dp"
-                    android:background="@color/btn_accueil"
-                    android:padding="10dp">
-
-                    <TextView
-                        android:id="@+id/textViewSub3Title"
-                        style="@style/viewParent.headerText.HomeCardTitle"
-                        android:layout_width="253dp"
+                        android:id="@+id/voir_plus2"
+                        android:clickable="true"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/TitreSection1"
-                        android:textSize="23dp" />
+                        android:layout_gravity="right|center"
+                        android:layout_weight="10"
+                        android:textSize="15dp"
+                        android:gravity="right"
+                        android:text="@string/voir_tout"
+                        android:textColor="@color/gradientViolet"
+                        android:textStyle="bold"/>
+                </LinearLayout>
 
-                    <TextView
-                        style="@style/viewParent.headerText.homeCardContent"
-                        android:layout_width="237dp"
-                        android:layout_height="67dp"
-                        android:layout_below="@id/textViewSub3Title"
-                        android:text="@string/DescriptionSection3" />
-
-                    <ImageView
-                        style="@style/homeCardImage"
-                        android:layout_width="93dp"
-                        android:layout_height="68dp"
-                        android:maxHeight="90dp"/>
-
-                </RelativeLayout>
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:cardCornerRadius="8dp"
-                app:cardPreventCornerOverlap="true"
-                android:layout_marginTop="10dp">
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:minHeight="100dp"
-                    android:background="@color/btn_accueil"
-                    android:padding="10dp">
-
-                    <TextView
-                        android:id="@+id/textViewSub4Title"
-                        style="@style/viewParent.headerText.HomeCardTitle"
-                        android:layout_width="253dp"
-                        android:layout_height="wrap_content"
-                        android:text="@string/TitreSection1"
-                        android:textSize="23dp" />
-
-                    <TextView
-                        style="@style/viewParent.headerText.homeCardContent"
-                        android:layout_width="237dp"
-                        android:layout_height="67dp"
-                        android:layout_below="@id/textViewSub4Title"
-                        android:text="@string/DescriptionSection4" />
-
-                    <ImageView
-                        style="@style/homeCardImage"
-                        android:layout_width="93dp"
-                        android:layout_height="68dp"
-                        android:maxHeight="90dp"/>
-
-                </RelativeLayout>
-            </androidx.cardview.widget.CardView>
+            </LinearLayout>
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>

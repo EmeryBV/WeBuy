@@ -33,5 +33,10 @@
 
     <color name="gradientLightBlue">#376DF6</color>
     <color name="gradientLightGreen">#21E8AC</color>
+    <color name="colorToolbar">#FC0000</color>
+
+    <!--gradient colors-->
+    <color name="gradientJaune">#FFCE00</color>
+
 
 </resources>

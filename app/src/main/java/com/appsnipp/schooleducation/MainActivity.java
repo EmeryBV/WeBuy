@@ -21,11 +21,18 @@ import android.view.WindowManager;
 
 import com.appsnipp.schooleducation.ui.magasins.MagasinsFragment;
 
-public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    private BottomNavigationView bottomNavigationView;
+    /*
+    <include
+        layout="@layout/app_bar_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+     */
 
+    //private BottomNavigationView bottomNavigationView;
+
+    /*
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -53,15 +60,16 @@ public class MainActivity extends AppCompatActivity
             }
             return false;
         }
-    };
+    };*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setDarkMode(getWindow());
-
         setContentView(R.layout.activity_main);
+
+        /*
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -69,19 +77,22 @@ public class MainActivity extends AppCompatActivity
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
-        toggle.syncState();
+        toggle.syncState();*/
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        //navigationView.setCheckedItem(R.id.nav_home);
 
+        onNavigationItemSelected(navigationView.getMenu().findItem(R.id.nav_home));
+
+        /*
         bottomNavigationView = findViewById(R.id.navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         CoordinatorLayout.LayoutParams layoutParams = (CoordinatorLayout.LayoutParams) bottomNavigationView.getLayoutParams();
         layoutParams.setBehavior(new BottomNavigationBehavior());
 
-        bottomNavigationView.setSelectedItemId(R.id.navigationAccueil);
-
+        bottomNavigationView.setSelectedItemId(R.id.navigationAccueil);*/
     }
 
     @Override
@@ -94,7 +105,6 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
@@ -102,6 +112,8 @@ public class MainActivity extends AppCompatActivity
         Fragment fragment = null;
         switch (item.getItemId()) {
             case R.id.nav_home:
+                fragment = new AccueilFragment();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,fragment).commit();
                 break;
             case R.id.nav_shop:
                 fragment = new MagasinsFragment();

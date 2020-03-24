@@ -3,7 +3,7 @@
 xmlns:android="http://schemas.android.com/apk/res/android"
 xmlns:tools="http://schemas.android.com/tools"
 tools:context="com.appsnipp.schooleducation.MainActivity"
-tools:showIn="@layout/app_bar_main"
+tools:showIn="@layout/activity_main"
 style="@style/parent.contentLayout">
 
     <FrameLayout
