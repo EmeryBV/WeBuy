@@ -7,6 +7,8 @@
     xmlns:gl="http://schemas.android.com/apk/res-auto"
     tools:context=".AccueilFragment">
 
+    <include layout="@layout/toolbar" />
+
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -24,38 +26,9 @@
             <!-- for Recycler view use any of the layout as model-->
 
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/border"
-                android:orientation="horizontal"
-                android:paddingBottom="8dp">
-
-
-                <ImageView
-                    android:id="@+id/menu"
-                    android:layout_width="68dp"
-                    android:layout_height="33dp"
-                    android:paddingLeft="20dp"
-                    android:src="@drawable/icone_menu"
-                    android:tint="@color/gradientJaune"
-
-                    />
-
-                <ImageView
-                    android:id="@+id/imageView2"
-                    android:layout_width="325dp"
-                    android:layout_height="33dp"
-                    android:paddingLeft="180dp"
-                    android:paddingRight="20dp"
-                    android:src="@drawable/ic_home"
-                    android:tint="@color/gradientJaune" />
-
-
-            </LinearLayout>
 
             <LinearLayout
+                android:layout_marginTop="80dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
@@ -312,7 +285,7 @@
                             android:layout_height="76dp"
                             android:layout_marginLeft="150dp"
                             android:layout_marginTop="45dp"
-                            android:src="@drawable/promograndmerecafe"
+                            android:src="@drawable/promo_cafe"
                             gl:civ_border_color="#000000"
                             gl:civ_border_width="2dp" />
 
@@ -388,7 +361,7 @@
                             android:layout_height="76dp"
                             android:layout_marginTop="45dp"
                             android:layout_marginLeft="150dp"
-                            android:src="@drawable/promoharibo"
+                            android:src="@drawable/haribopromo"
                             gl:civ_border_color="#000000"
                             gl:civ_border_width="2dp" />
 
