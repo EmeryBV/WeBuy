@@ -104,8 +104,8 @@ public class AccueilFragment extends Fragment implements DetecteurClicAccueilRec
     }
 
     public void clicSurRecyclerItem(int idMagasin, View v) {
-        Toast.makeText(getContext(), "Clic sur le magasin avec id = "+idMagasin, Toast.LENGTH_LONG).show();
-        PromotionsFragment promotionsFragment = PromotionsFragment.newInstance(idMagasin);
+        Toast.makeText(getContext(), "Clic sur le magasin avec id = "+(idMagasin+1), Toast.LENGTH_LONG).show();
+        PromotionsFragment promotionsFragment = PromotionsFragment.newInstance(idMagasin+1);
         getFragmentManager().beginTransaction().replace(R.id.fragment_container, promotionsFragment).addToBackStack(null).commit();
     }
 

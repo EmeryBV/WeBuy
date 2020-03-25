@@ -12,7 +12,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.appsnipp.schooleducation.Data;
+import com.appsnipp.schooleducation.MainActivity;
 import com.appsnipp.schooleducation.R;
+import com.appsnipp.schooleducation.ui.accueil.AccueilFragment;
 import com.appsnipp.schooleducation.ui.utilisateurs.LoginFragment;
 
 public class PromotionDetailFragment extends Fragment {
@@ -72,6 +74,28 @@ public class PromotionDetailFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 LoginFragment fragment = new LoginFragment();
+                getFragmentManager().beginTransaction().replace(R.id.fragment_container,fragment).commit();
+            }
+        });
+
+        ImageView menu = (ImageView) root.findViewById(R.id.menu);
+        ImageView accueil = (ImageView) root.findViewById(R.id.accueil);
+
+        menu.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                ((MainActivity) getActivity()).openDrawer();
+            }
+        });
+
+        accueil.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                AccueilFragment fragment = new AccueilFragment();
                 getFragmentManager().beginTransaction().replace(R.id.fragment_container,fragment).commit();
             }
         });

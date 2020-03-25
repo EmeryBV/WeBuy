@@ -57,7 +57,7 @@
                                 android:id="@+id/titre"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/menu_amis"
+                                android:text="@string/menu_achats"
                                 android:textSize="22dp"
                                 android:textStyle="bold"
                                 android:textColor="@color/whiteTextColor"
@@ -68,7 +68,7 @@
                                 style="@style/viewParent.headerText.homeCardContent"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:text="@string/presentation_fragment_amis"
+                                android:text="@string/presentation_fragment_achats"
                                 android:textSize="17dp" />
                         </LinearLayout>
 

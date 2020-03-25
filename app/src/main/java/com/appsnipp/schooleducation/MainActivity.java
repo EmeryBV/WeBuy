@@ -9,6 +9,7 @@ import com.appsnipp.schooleducation.ui.accueil.AccueilFragment;
 import androidx.fragment.app.Fragment;
 import androidx.appcompat.app.AppCompatDelegate;
 
+import com.appsnipp.schooleducation.ui.achats.AchatsFragment;
 import com.appsnipp.schooleducation.ui.amis.AmisFragment;
 import com.appsnipp.schooleducation.ui.utilisateurs.LoginFragment;
 import com.google.android.material.navigation.NavigationView;
@@ -26,76 +27,21 @@ import com.appsnipp.schooleducation.ui.magasins.MagasinsFragment;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    /*
-    <include
-        layout="@layout/app_bar_main"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-     */
-
-    //private BottomNavigationView bottomNavigationView;
-
-    /*
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            Fragment fragment;
-            switch (item.getItemId()) {
-
-                case R.id.navigationMagasins:
-                    fragment = new MagasinsFragment();
-                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,fragment).commit();
-                    return true;
-                case R.id.navigationAccueil:
-                    fragment = new AccueilFragment();
-                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,fragment).commit();
-                    return true;
-                case R.id.navigationAchats:
-                    return true;
-                case  R.id.navigationNotifications:
-                    return true;
-                case  R.id.navigationMenu:
-                    DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-                    drawer.openDrawer(GravityCompat.START);
-                    return true;
-            }
-            return false;
-        }
-    };*/
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
         setDarkMode(getWindow());
         setContentView(R.layout.activity_main);
 
-        /*
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.addDrawerListener(toggle);
-        toggle.syncState();*/
-
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-        //navigationView.setCheckedItem(R.id.nav_home);
 
         onNavigationItemSelected(navigationView.getMenu().findItem(R.id.nav_home));
-
-        /*
-        bottomNavigationView = findViewById(R.id.navigation);
-        bottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-
-        CoordinatorLayout.LayoutParams layoutParams = (CoordinatorLayout.LayoutParams) bottomNavigationView.getLayoutParams();
-        layoutParams.setBehavior(new BottomNavigationBehavior());
-
-        bottomNavigationView.setSelectedItemId(R.id.navigationAccueil);*/
     }
 
     @Override
@@ -123,6 +69,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,fragment).addToBackStack(null).commit();
                 break;
             case R.id.nav_buy:
+                fragment = new AchatsFragment();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,fragment).addToBackStack(null).commit();
                 break;
             case R.id.nav_friends:
                 fragment = new AmisFragment();

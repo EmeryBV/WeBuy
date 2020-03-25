@@ -68,5 +68,6 @@
     <string name="prénom">"Prénom"</string>
     <string name="Nom">"Nom"</string>
     <string name="déjàInscrit"><u>"Déjà inscrit ? Connectez-vous"</u></string>
+    <string name="presentation_fragment_achats">Içi, vous pouvez consulter les groupes que vous avez rejoint.</string>
 
 </resources>
