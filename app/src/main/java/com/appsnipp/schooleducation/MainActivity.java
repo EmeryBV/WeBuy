@@ -8,11 +8,15 @@ import com.appsnipp.schooleducation.ui.accueil.AccueilFragment;
 
 import androidx.fragment.app.Fragment;
 import androidx.appcompat.app.AppCompatDelegate;
+
+import com.appsnipp.schooleducation.ui.amis.AmisFragment;
+import com.appsnipp.schooleducation.ui.utilisateurs.LoginFragment;
 import com.google.android.material.navigation.NavigationView;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
@@ -112,19 +116,25 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         switch (item.getItemId()) {
             case R.id.nav_home:
                 fragment = new AccueilFragment();
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,fragment).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,fragment).addToBackStack(null).commit();
                 break;
             case R.id.nav_shop:
                 fragment = new MagasinsFragment();
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,fragment).addToBackStack(null).commit();
                 break;
+            case R.id.nav_buy:
+                break;
             case R.id.nav_friends:
+                fragment = new AmisFragment();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,fragment).addToBackStack(null).commit();
                 break;
             case R.id.nav_connexion:
-                Intent secondeActivite = new Intent(this, LoginActivity.class);
-                startActivity(secondeActivite);
+                fragment = new LoginFragment();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,fragment).addToBackStack(null).commit();
                 break;
-            case R.id.dark_mode:
+            case R.id.nav_tools:
+                break;
+            case R.id.nav_dark_mode:
                 DarkModePrefManager darkModePrefManager = new DarkModePrefManager(this);
                 darkModePrefManager.setDarkMode(!darkModePrefManager.isNightMode());
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
@@ -155,5 +165,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
             }
         }
+    }
+
+    public void openDrawer() {
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.openDrawer(GravityCompat.START);
     }
 }

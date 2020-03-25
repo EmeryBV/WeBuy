@@ -5,8 +5,10 @@
     android:layout_height="match_parent"
     tools:context=".ui.magasins.MagasinsFragment">
 
-    <androidx.recyclerview.widget.RecyclerView
+    <include layout="@layout/toolbar"></include>
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:paddingTop="60dp"
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

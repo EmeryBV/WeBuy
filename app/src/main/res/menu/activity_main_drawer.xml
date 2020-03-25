@@ -13,14 +13,16 @@
             android:id="@+id/nav_shop"
             android:icon="@drawable/ic_magasins"
             android:title="@string/menu_magasins" />
-        <item
-            android:id="@+id/nav_buy"
-            android:icon="@drawable/ic_achats"
-            android:title="@string/menu_achats" />
-        <item
-            android:id="@+id/nav_connexion"
-            android:icon="@drawable/ic_connexion"
-            android:title="@string/menu_connection" />
+
+        <item android:title="">
+            <menu>
+                <item
+                    android:id="@+id/nav_buy"
+                    android:icon="@drawable/ic_achats"
+                    android:title="@string/menu_achats" />
+
+            </menu>
+        </item>
         <item
             android:id="@+id/nav_friends"
             android:icon="@drawable/ic_friends"
@@ -30,14 +32,19 @@
     <item android:title="">
         <menu>
             <item
-            android:id="@+id/nav_tools"
-            android:icon="@drawable/ic_settings"
-            android:title="@string/menu_option">
+                android:id="@+id/nav_connexion"
+                android:icon="@drawable/ic_connexion"
+                android:title="@string/menu_connection" />
+
+            <item
+                android:id="@+id/nav_tools"
+                android:icon="@drawable/ic_settings"
+                android:title="@string/menu_option">
 
             </item>
 
             <item
-                android:id="@+id/dark_mode"
+                android:id="@+id/nav_dark_mode"
                 android:icon="@drawable/ic_theme"
                 android:title="@string/menu_DarkMode" />
         </menu>

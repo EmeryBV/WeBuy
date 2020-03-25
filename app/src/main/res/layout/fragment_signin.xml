@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/toolbar_log_sign"></include>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:overScrollMode="never"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.41"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/contentBodyColor"
+            android:orientation="vertical"
+            android:paddingLeft="50dp"
+            android:paddingTop="80dp"
+            android:paddingRight="50dp"
+            android:paddingBottom="50dp"
+            >
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="80dp"
+                android:text="@string/titreInscription"
+                android:textAlignment="center"
+                android:textColor="@color/gradientViolet"
+                android:textSize="50sp"
+                android:textStyle="bold" />
+
+
+            <TableLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/firstNameTxt"
+                        android:layout_width="110dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/prénom"
+                        android:textColor="@color/gris_log_sign"
+
+                        />
+
+                    <TextView
+                        android:id="@+id/NameTxt"
+                        android:layout_width="110dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/Nom"
+                        android:textColor="@color/gris_log_sign" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <EditText
+                        android:id="@+id/firstName"
+                        android:layout_width="150dp"
+                        android:layout_height="50dp"
+                        android:layout_marginBottom="20dp"
+                        android:ems="10"
+                        android:inputType="textPersonName"
+                        android:backgroundTint= "@color/gradientViolet"
+                        />
+
+                    <EditText
+                        android:id="@+id/name"
+                        android:layout_width="150dp"
+                        android:layout_height="50dp"
+                        android:layout_marginBottom="20dp"
+                        android:ems="10"
+                        android:inputType="textPersonName"
+                        android:backgroundTint= "@color/gradientViolet"
+                        />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                </TableRow>
+            </TableLayout>
+
+            <TextView
+                android:id="@+id/emailtext"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:text="@string/prompt_email"
+                android:textColor="@color/gris_log_sign" />
+
+            <EditText
+                android:id="@+id/email"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="20dp"
+                android:ems="10"
+                android:backgroundTint= "@color/gradientViolet"
+                android:inputType="textEmailAddress" />
+
+
+            <TextView
+                android:id="@+id/passwordTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/prompt_password"
+                android:textColor="@color/gris_log_sign" />
+
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:ems="10"
+                android:inputType="textPassword"
+                android:backgroundTint= "@color/gradientViolet"
+                />
+
+            <Button
+                android:id="@+id/connect"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/btn_inscription"
+                android:padding="15dp"
+                android:text="@string/titreInscription"
+                android:textColor="@color/text_btn" />
+
+            <TextView
+                android:id="@+id/se_connecter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="@string/déjàInscrit"
+                android:textAlignment="center"
+                android:textColor="@color/gradientViolet"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

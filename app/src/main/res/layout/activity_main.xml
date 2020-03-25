@@ -19,8 +19,8 @@
         app:headerLayout="@layout/nav_header_main"
         app:menu="@menu/activity_main_drawer"
         android:backgroundTint="@color/contentBodyColor"
-        app:itemIconTint="@color/gradientViolet"
-        app:itemTextColor="@color/gradientViolet">
+        app:itemIconTint="@color/menu_color"
+        app:itemTextColor="@color/menu_color">
 
     </com.google.android.material.navigation.NavigationView>
 

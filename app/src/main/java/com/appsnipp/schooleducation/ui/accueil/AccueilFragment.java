@@ -1,17 +1,26 @@
 package com.appsnipp.schooleducation.ui.accueil;
 
+import android.media.Image;
 import android.os.Bundle;
+
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
 import com.appsnipp.schooleducation.Data;
+import com.appsnipp.schooleducation.MainActivity;
 import com.appsnipp.schooleducation.R;
 import com.appsnipp.schooleducation.ui.magasins.MagasinsFragment;
 import com.appsnipp.schooleducation.ui.promotions.PromotionDetailFragment;
@@ -36,6 +45,28 @@ public class AccueilFragment extends Fragment implements DetecteurClicAccueilRec
 
         View root = (View) inflater.inflate(R.layout.fragment_accueil, container, false);
         voirPlusMagasins = (TextView) root.findViewById(R.id.voir_plus);
+
+        ImageView menu = (ImageView) root.findViewById(R.id.menu);
+        ImageView accueil = (ImageView) root.findViewById(R.id.accueil);
+
+        menu.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                ((MainActivity) getActivity()).openDrawer();
+            }
+        });
+
+        accueil.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                AccueilFragment fragment = new AccueilFragment();
+                getFragmentManager().beginTransaction().replace(R.id.fragment_container,fragment).commit();
+            }
+        });
 
         voirPlusMagasins.setOnClickListener(new View.OnClickListener()
         {

@@ -4,126 +4,142 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:gl="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.promotions.PromotionDetailFragment">
 
     <LinearLayout
         android:orientation="vertical" android:layout_width="match_parent"
-        android:background="@color/colorPrimary"
+        android:background="@color/gradientOrange"
         android:layout_height="match_parent">
 
-        <ImageView
-            android:id="@+id/imageView"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:layout_gravity="top"
-            android:background="#FFFFFF"
-            android:maxHeight="200dp"
-            app:srcCompat="@drawable/nutella" />
+            android:layout_height="280dp"
+            android:background="@color/whiteBodyColor"
+            android:gravity="center"
+            android:orientation="horizontal">
 
-        <androidx.core.widget.NestedScrollView
+            <ImageView
+                android:id="@+id/imagePromoGrand"
+                android:layout_width="230dp"
+                android:layout_height="230dp"
+                android:background="@color/whiteBodyColor"
+                android:maxHeight="200dp" />
+        </LinearLayout>
+
+        <net.colindodd.gradientlayout.GradientRelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:fillViewport="true"
-            android:layout_marginBottom="50dp">
+            gl:end_color="@color/gradientJaune"
+            gl:start_color="@color/gradientOrange">
 
-            <LinearLayout
+            <androidx.core.widget.NestedScrollView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:paddingTop="30dp"
-                android:paddingLeft="30dp"
-                android:paddingRight="30dp">
-
-                <TextView
-                    android:id="@+id/nom"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="15dp"
-                    android:text="TextView"
-                    android:textColor="#FFFFFF"
-                    android:textSize="22sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/prix_hors_promo"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:text="TextView"
-                    android:textColor="#FFFFFF"
-                    android:textSize="15sp" />
-
-                <TextView
-                    android:id="@+id/prix_avec_promo"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:text="TextView"
-                    android:textColor="#FFFFFF"
-                    android:textSize="15sp" />
+                android:layout_height="match_parent"
+                android:fillViewport="true"
+                android:layout_marginBottom="50dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="15sp"
-                    android:orientation="horizontal">
+                    android:orientation="vertical"
+                    android:paddingTop="30dp"
+                    android:paddingLeft="30dp"
+                    android:paddingRight="30dp">
 
                     <TextView
-                        android:id="@+id/quantite_min"
-                        android:layout_width="wrap_content"
+                        android:id="@+id/nom"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        android:layout_marginBottom="15dp"
+                        android:text="TextView"
+                        android:textColor="#FFFFFF"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/prix_hors_promo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
                         android:text="TextView"
                         android:textColor="#FFFFFF"
                         android:textSize="15sp" />
 
                     <TextView
-                        android:id="@+id/quantite_requise"
-                        android:layout_width="wrap_content"
+                        android:id="@+id/prix_avec_promo"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        android:layout_marginBottom="10dp"
                         android:text="TextView"
                         android:textColor="#FFFFFF"
                         android:textSize="15sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="15sp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/quantite_min"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="TextView"
+                            android:textColor="#FFFFFF"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:id="@+id/quantite_requise"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="TextView"
+                            android:textColor="#FFFFFF"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/quantite_restante"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:text="TextView"
+                        android:textColor="#FFFFFF"
+                        android:textSize="15sp" />
+
+                    <Button
+                        android:id="@+id/button2"
+                        android:padding="15dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:text="S'inscrire"
+                        android:textColor="#FFFFFF"
+                        android:background="@drawable/btn_inscription"
+                        android:layout_margin="10dp"/>
+
+                    <TextView
+                        android:id="@+id/textView7"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Membres inscrits"
+                        android:textColor="#FFFFFF"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
+
+                    <ListView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="10dp" >
+
+                    </ListView>
+
                 </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
 
-                <TextView
-                    android:id="@+id/quantite_restante"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:text="TextView"
-                    android:textColor="#FFFFFF"
-                    android:textSize="15sp" />
 
-                <Button
-                    android:id="@+id/button2"
-                    android:padding="15dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:text="S'inscrire"
-                    android:textColor="#FFFFFF"
-                    android:background="@drawable/btn_inscription"
-                    android:layout_margin="10dp"/>
-
-                <TextView
-                    android:id="@+id/textView7"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Membres inscrits"
-                    android:textColor="#FFFFFF"
-                    android:textSize="17sp"
-                    android:textStyle="bold" />
-
-                <ListView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:padding="10dp" >
-
-                </ListView>
-
-            </LinearLayout>
-        </androidx.core.widget.NestedScrollView>
+        </net.colindodd.gradientlayout.GradientRelativeLayout>
 
     </LinearLayout>
 

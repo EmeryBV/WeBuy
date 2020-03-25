@@ -1,6 +1,5 @@
 package com.appsnipp.schooleducation.ui.promotions;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -9,11 +8,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.appsnipp.schooleducation.Data;
-import com.appsnipp.schooleducation.LoginActivity;
 import com.appsnipp.schooleducation.R;
+import com.appsnipp.schooleducation.ui.utilisateurs.LoginFragment;
 
 public class PromotionDetailFragment extends Fragment {
 
@@ -26,6 +26,7 @@ public class PromotionDetailFragment extends Fragment {
     private TextView quantite_requise;
     private TextView quantite_restante;
     private Button inscription;
+    private ImageView imagePromoGrand;
 
     public static PromotionDetailFragment newInstance(int index) {
         PromotionDetailFragment promotionDetailFragment = new PromotionDetailFragment();
@@ -50,6 +51,7 @@ public class PromotionDetailFragment extends Fragment {
             if (promo.getId() == getIdPromotionEnCours()) mPromotion = promo;
         }
 
+        imagePromoGrand = root.findViewById(R.id.imagePromoGrand);
         nom = root.findViewById(R.id.nom);
         prix_hors_promo = root.findViewById(R.id.prix_hors_promo);
         prix_avec_promo = root.findViewById(R.id.prix_avec_promo);
@@ -63,13 +65,14 @@ public class PromotionDetailFragment extends Fragment {
         quantite_min.setText("Quantité min: "+mPromotion.getQuantiteMin());
         quantite_requise.setText("Quantité à acheter: "+mPromotion.getQuantiteRequise());
         quantite_restante.setText("Quantité restante: "+mPromotion.getQuantiteRestante());
+        imagePromoGrand.setImageResource(Data.getImagePromotions().get(mPromotion.getId()-1));
 
         inscription = root.findViewById(R.id.button2);
         inscription.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent secondeActivite = new Intent(getContext(), LoginActivity.class);
-                startActivity(secondeActivite);
+                LoginFragment fragment = new LoginFragment();
+                getFragmentManager().beginTransaction().replace(R.id.fragment_container,fragment).commit();
             }
         });
 

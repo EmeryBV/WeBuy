@@ -6,6 +6,9 @@
     <color name="bottomNavigationBackground">#000000</color>
     <color name="miniTitleColor">#fff</color>
     <color name="darkTextColor">#FFF</color>
+    <color name="toolbar">#190E20</color>
+
+    <color name="menu_color">#AD89FF</color>
 
     <color name="gradientJaune">#9813F3</color>
     <color name="gradientOrange">#742BEF</color>

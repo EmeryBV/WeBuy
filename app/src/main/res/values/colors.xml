@@ -16,7 +16,7 @@
     <color name="btn_accueil">#E91E63</color>
     <color name="toolbar">#FCFCFC</color>
     <!--colors for light mode-->
-    <color name="contentBodyColor">#FCFCFC</color>
+    <color name="contentBodyColor">#FFFFFF</color>
     <color name="contentTextColor">#020000</color>
     <color name="miniTitleColor">#6F6A6A</color>
     <color name="bottomNavigationBackground">#F7F7F7</color>
@@ -39,5 +39,8 @@
     <!--gradient colors-->
     <color name="gradientJaune">#FFCE00</color>
     <color name="bgImageMagasins">#FFFFFF</color>
+    <color name="gris_log_sign">#7E7E7E</color>
+    <color name="menu_color">#FF9800</color>
+    <color name="text_btn">#2B283D</color>
 
 </resources>

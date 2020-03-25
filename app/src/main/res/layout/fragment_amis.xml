@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.accueil.AccueilFragment"
+    xmlns:gl="http://schemas.android.com/apk/res-auto">
+
+    <include layout="@layout/toolbar" android:id="@+id/toolbar">
+
+    </include>
+
+    <androidx.core.widget.NestedScrollView
+        android:paddingTop="60dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:background="@color/contentBodyColor"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingHorizontal="20dp"
+                android:layout_marginBottom="20dp"
+                >
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    app:cardCornerRadius="15dp"
+                    app:cardPreventCornerOverlap="true">
+
+                    <net.colindodd.gradientlayout.GradientRelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:minHeight="130dp"
+                        android:padding="10dp"
+                        gl:end_color="@color/gradientJaune"
+                        gl:start_color="@color/gradientOrange">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/titre"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/menu_achats"
+                                android:textSize="22dp"
+                                android:textStyle="bold"
+                                android:textColor="@color/whiteTextColor"
+                                android:paddingBottom="50dp"/>
+
+                            <TextView
+                                android:id="@+id/Slogan"
+                                style="@style/viewParent.headerText.homeCardContent"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/presentation_fragment_amis"
+                                android:textSize="17dp" />
+                        </LinearLayout>
+
+                    </net.colindodd.gradientlayout.GradientRelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"/>
+
+                <Button
+                    android:id="@+id/se_connecter"
+                    android:padding="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:text="@string/se_connecter"
+                    android:textColor="@color/text_btn"
+                    android:background="@drawable/btn_inscription"
+                    android:layout_margin="10dp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</FrameLayout>
