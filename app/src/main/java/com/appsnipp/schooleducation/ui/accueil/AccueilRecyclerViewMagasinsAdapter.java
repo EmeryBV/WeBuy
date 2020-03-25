@@ -11,10 +11,10 @@ import java.util.ArrayList;
 
 public class AccueilRecyclerViewMagasinsAdapter extends RecyclerView.Adapter<AccueilRecyclerViewMagasinsAdapter.ConteneurDeDonnee> {
 
-    private ArrayList<String> imageMagasins;
+    private ArrayList<Integer> imageMagasins = new ArrayList<>();
     private static DetecteurClicAccueilMagasinsRecycler sDetecteurClicAccueilMagasinsRecycler;
 
-    public AccueilRecyclerViewMagasinsAdapter(ArrayList<String> imageMagasins) {
+    public AccueilRecyclerViewMagasinsAdapter(ArrayList<Integer> imageMagasins) {
         this.imageMagasins = imageMagasins;
     }
 
@@ -27,7 +27,7 @@ public class AccueilRecyclerViewMagasinsAdapter extends RecyclerView.Adapter<Acc
 
     @Override
     public void onBindViewHolder(AccueilRecyclerViewMagasinsAdapter.ConteneurDeDonnee conteneur, int position) {
-        //conteneur.logo.setImageResource(R.drawable.darty);
+        conteneur.logo.setImageResource(imageMagasins.get(position));
         conteneur.idMagasin = position;
     }
 
@@ -42,7 +42,7 @@ public class AccueilRecyclerViewMagasinsAdapter extends RecyclerView.Adapter<Acc
 
         public ConteneurDeDonnee(View itemView) {
             super(itemView);
-            logo = (ImageView ) itemView.findViewById(R.id.imageView);
+            logo = (ImageView ) itemView.findViewById(R.id.imageView1);
             itemView.setOnClickListener(this);
         }
 

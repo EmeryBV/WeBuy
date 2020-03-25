@@ -34,14 +34,14 @@ public class Data {
         return magasins;
     }
 
-    public static ArrayList<String> getImageMagasins() {
-        ArrayList<String> imageMagasins = new ArrayList<>();
-        imageMagasins.add("@drawable/carrefour");
-        imageMagasins.add("@drawable/casino");
-        imageMagasins.add("@drawable/leclerc");
-        imageMagasins.add("@drawable/bricorama");
-        imageMagasins.add("@drawable/la_halle");
-        imageMagasins.add("@drawable/darty");
+    public static ArrayList<Integer> getImageMagasins() {
+        ArrayList<Integer> imageMagasins = new ArrayList<>();
+        imageMagasins.add(R.drawable.carrefour);
+        imageMagasins.add(R.drawable.casino);
+        imageMagasins.add(R.drawable.leclerc);
+        imageMagasins.add(R.drawable.bricorama);
+        imageMagasins.add(R.drawable.la_halle);
+        imageMagasins.add(R.drawable.darty);
         return imageMagasins;
     }
 

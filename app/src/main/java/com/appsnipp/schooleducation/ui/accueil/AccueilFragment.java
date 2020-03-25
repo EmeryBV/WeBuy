@@ -45,7 +45,7 @@ public class AccueilFragment extends Fragment implements DetecteurClicAccueilMag
 
         mAccueilRecyclerViewMagasins = (RecyclerView) root.findViewById(R.id.recycler_view_magasins);
         mAccueilRecyclerViewMagasins.setHasFixedSize(true);
-        mLayoutManager = new LinearLayoutManager(getContext());
+        mLayoutManager = new LinearLayoutManager(getContext(),RecyclerView.HORIZONTAL,false);
         mAccueilRecyclerViewMagasins.setLayoutManager(mLayoutManager);
         mAccueilAdapterMagasins = new AccueilRecyclerViewMagasinsAdapter(Data.getImageMagasins());
         mAccueilRecyclerViewMagasins.setAdapter(mAccueilAdapterMagasins);
