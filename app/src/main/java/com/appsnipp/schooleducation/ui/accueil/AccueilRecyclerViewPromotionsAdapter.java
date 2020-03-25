@@ -1,48 +1,48 @@
-package com.appsnipp.schooleducation.ui.promotions;
+package com.appsnipp.schooleducation.ui.accueil;
 
-import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.appsnipp.schooleducation.Data;
 import com.appsnipp.schooleducation.R;
+import com.appsnipp.schooleducation.ui.promotions.DetecteurClicPromotionsRecycler;
+import com.appsnipp.schooleducation.ui.promotions.Promotion;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
-public class PromotionsRecyclerViewAdapter extends RecyclerView.Adapter<PromotionsRecyclerViewAdapter.ConteneurDeDonnee> {
+public class AccueilRecyclerViewPromotionsAdapter extends RecyclerView.Adapter<AccueilRecyclerViewPromotionsAdapter.ConteneurDeDonnee> {
 
-    private int mIdMagasins;
     private ArrayList<Promotion> promotions = new ArrayList<>();
     private ArrayList<Integer> imagePromotions = new ArrayList<>();
-    private static DetecteurClicPromotionsRecycler sDetecteurClicPromotionsRecycler;
+    private static DetecteurClicAccueilRecycler sDetecteurClicAccueilPromotionsRecycler;
 
-    public PromotionsRecyclerViewAdapter(int mIdMagasins, ArrayList<Promotion> promotions) {
-        this.mIdMagasins = mIdMagasins;
-        for (Promotion promo: promotions){
-            if (promo.getIdMagasin() == mIdMagasins) this.promotions.add(promo);
-        }
+    public AccueilRecyclerViewPromotionsAdapter(ArrayList<Promotion> promotions) {
+        this.promotions = promotions;
         imagePromotions = Data.getImagePromotions();
     }
 
     @Override
-    public PromotionsRecyclerViewAdapter.ConteneurDeDonnee onCreateViewHolder(ViewGroup parent, int viewType) {
+    public AccueilRecyclerViewPromotionsAdapter.ConteneurDeDonnee onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.accueil_promotions_recycler_item, parent, false);
-        return new PromotionsRecyclerViewAdapter.ConteneurDeDonnee(view);
+        return new AccueilRecyclerViewPromotionsAdapter.ConteneurDeDonnee(view);
     }
 
     @Override
-    public void onBindViewHolder(PromotionsRecyclerViewAdapter.ConteneurDeDonnee conteneur, int position) {
+    public void onBindViewHolder(AccueilRecyclerViewPromotionsAdapter.ConteneurDeDonnee conteneur, int position) {
+        conteneur.logo.setImageResource(imagePromotions.get(position));
         conteneur.nom.setText(promotions.get(position).getNomPromotion());
         conteneur.prix_avec_promo.setText("Prix promos: "+promotions.get(position).getPrixAvecPromo());
         conteneur.prix_sans_promo.setText("Prix hors promos: ");
         conteneur.quantite_min.setText("Quantité minimum: "+promotions.get(position).getQuantiteMin());
         conteneur.quantite_requise.setText("Quantité à acheter: "+promotions.get(position).getQuantiteRequise());
         conteneur.idPromotion = promotions.get(position).getId();
-        conteneur.logo.setImageResource(imagePromotions.get(conteneur.idPromotion-1));
     }
 
     @Override
@@ -72,11 +72,11 @@ public class PromotionsRecyclerViewAdapter extends RecyclerView.Adapter<Promotio
 
         @Override
         public void onClick(View v) {
-            sDetecteurClicPromotionsRecycler.clicSurRecyclerItem(idPromotion,v);
+            sDetecteurClicAccueilPromotionsRecycler.clicSurRecyclerItemPromos(idPromotion,v);
         }
     }
 
-    public void setDetecteurDeClicSurRecycler(DetecteurClicPromotionsRecycler detecteurClicPromotionsRecycler) {
-        this.sDetecteurClicPromotionsRecycler = detecteurClicPromotionsRecycler;
+    public void setDetecteurDeClicSurRecyclerPromos(DetecteurClicAccueilRecycler detecteurClicAccueilPromotionsRecycler) {
+        this.sDetecteurClicAccueilPromotionsRecycler = detecteurClicAccueilPromotionsRecycler;
     }
 }

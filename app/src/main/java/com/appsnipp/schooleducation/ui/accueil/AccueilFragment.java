@@ -13,17 +13,21 @@ import android.widget.Toast;
 
 import com.appsnipp.schooleducation.Data;
 import com.appsnipp.schooleducation.R;
-import com.appsnipp.schooleducation.ui.magasins.DetecteurClicMagasinsRecycler;
 import com.appsnipp.schooleducation.ui.magasins.MagasinsFragment;
+import com.appsnipp.schooleducation.ui.promotions.PromotionDetailFragment;
 import com.appsnipp.schooleducation.ui.promotions.PromotionsFragment;
 
-public class AccueilFragment extends Fragment implements DetecteurClicAccueilMagasinsRecycler {
+public class AccueilFragment extends Fragment implements DetecteurClicAccueilRecycler {
 
     TextView voirPlusMagasins;
     private Data mDatas;
     private RecyclerView mAccueilRecyclerViewMagasins;
     private AccueilRecyclerViewMagasinsAdapter mAccueilAdapterMagasins;
     private RecyclerView.LayoutManager mLayoutManager;
+
+    private RecyclerView mPromotionsRecyclerView;
+    private AccueilRecyclerViewPromotionsAdapter mPromotionAdapter;
+    private RecyclerView.LayoutManager mLayoutManager2;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -51,6 +55,14 @@ public class AccueilFragment extends Fragment implements DetecteurClicAccueilMag
         mAccueilRecyclerViewMagasins.setAdapter(mAccueilAdapterMagasins);
         mAccueilAdapterMagasins.setDetecteurDeClicSurRecycler(this);
 
+        mPromotionsRecyclerView = (RecyclerView) root.findViewById(R.id.recycler_view_promotions);
+        mPromotionsRecyclerView.setHasFixedSize(true);
+        mLayoutManager2 = new LinearLayoutManager(getContext(),RecyclerView.HORIZONTAL,false);
+        mPromotionsRecyclerView.setLayoutManager(mLayoutManager2);
+        mPromotionAdapter = new AccueilRecyclerViewPromotionsAdapter(Data.getPromotions());
+        mPromotionsRecyclerView.setAdapter(mPromotionAdapter);
+        mPromotionAdapter.setDetecteurDeClicSurRecyclerPromos(this);
+
         return root;
     }
 
@@ -64,5 +76,12 @@ public class AccueilFragment extends Fragment implements DetecteurClicAccueilMag
         Toast.makeText(getContext(), "Clic sur le magasin avec id = "+idMagasin, Toast.LENGTH_LONG).show();
         PromotionsFragment promotionsFragment = PromotionsFragment.newInstance(idMagasin);
         getFragmentManager().beginTransaction().replace(R.id.fragment_container, promotionsFragment).addToBackStack(null).commit();
+    }
+
+    @Override
+    public void clicSurRecyclerItemPromos(int position, View v) {
+        Toast.makeText(getContext(), "Clic sur la promotion avec id = "+position, Toast.LENGTH_LONG).show();
+        PromotionDetailFragment promotionsDetailFragment = PromotionDetailFragment.newInstance(position);
+        getFragmentManager().beginTransaction().replace(R.id.fragment_container, promotionsDetailFragment).addToBackStack(null).commit();
     }
 }

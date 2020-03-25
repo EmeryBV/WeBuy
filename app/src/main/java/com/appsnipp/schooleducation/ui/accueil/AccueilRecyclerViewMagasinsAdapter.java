@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public class AccueilRecyclerViewMagasinsAdapter extends RecyclerView.Adapter<AccueilRecyclerViewMagasinsAdapter.ConteneurDeDonnee> {
 
     private ArrayList<Integer> imageMagasins = new ArrayList<>();
-    private static DetecteurClicAccueilMagasinsRecycler sDetecteurClicAccueilMagasinsRecycler;
+    private static DetecteurClicAccueilRecycler sDetecteurClicAccueilRecycler;
 
     public AccueilRecyclerViewMagasinsAdapter(ArrayList<Integer> imageMagasins) {
         this.imageMagasins = imageMagasins;
@@ -48,11 +48,11 @@ public class AccueilRecyclerViewMagasinsAdapter extends RecyclerView.Adapter<Acc
 
         @Override
         public void onClick(View v) {
-            sDetecteurClicAccueilMagasinsRecycler.clicSurRecyclerItem(idMagasin,v);
+            sDetecteurClicAccueilRecycler.clicSurRecyclerItem(idMagasin,v);
         }
     }
 
-    public void setDetecteurDeClicSurRecycler(DetecteurClicAccueilMagasinsRecycler detecteurClicAccueilMagasinsRecycler) {
-        this.sDetecteurClicAccueilMagasinsRecycler = detecteurClicAccueilMagasinsRecycler;
+    public void setDetecteurDeClicSurRecycler(DetecteurClicAccueilRecycler detecteurClicAccueilRecycler) {
+        this.sDetecteurClicAccueilRecycler = detecteurClicAccueilRecycler;
     }
 }

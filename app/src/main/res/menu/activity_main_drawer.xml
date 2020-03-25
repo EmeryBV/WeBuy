@@ -15,15 +15,15 @@
             android:title="@string/menu_magasins" />
         <item
             android:id="@+id/nav_buy"
-            android:icon="@drawable/caddie"
+            android:icon="@drawable/ic_achats"
             android:title="@string/menu_achats" />
         <item
             android:id="@+id/nav_connexion"
-            android:icon="@drawable/connection"
+            android:icon="@drawable/ic_connexion"
             android:title="@string/menu_connection" />
         <item
             android:id="@+id/nav_friends"
-            android:icon="@drawable/groupe"
+            android:icon="@drawable/ic_friends"
             android:title="@string/menu_amis" />
     </group>
 
@@ -38,7 +38,7 @@
 
             <item
                 android:id="@+id/dark_mode"
-                android:icon="@drawable/nuit"
+                android:icon="@drawable/ic_theme"
                 android:title="@string/menu_DarkMode" />
         </menu>
     </item>

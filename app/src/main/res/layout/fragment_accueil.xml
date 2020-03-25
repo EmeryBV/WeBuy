@@ -120,7 +120,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal"
-                    android:layout_marginTop="20dp">
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp">
 
                     <TextView
                         android:id="@+id/meilleurOffre"
@@ -144,6 +145,15 @@
                         android:textColor="@color/gradientViolet"
                         android:textStyle="bold"/>
                 </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+
+                    android:id="@+id/recycler_view_promotions"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scrollbars="horizontal"
+                    android:orientation="horizontal"
+                    android:clickable="true"/>
 
             </LinearLayout>
 

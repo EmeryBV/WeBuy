@@ -45,6 +45,17 @@ public class Data {
         return imageMagasins;
     }
 
+    public static ArrayList<Integer> getImagePromotions() {
+        ArrayList<Integer> imagePromotions = new ArrayList<>();
+        imagePromotions.add(R.drawable.cristaline);
+        imagePromotions.add(R.drawable.lactel);
+        imagePromotions.add(R.drawable.colgate);
+        imagePromotions.add(R.drawable.heads);
+        imagePromotions.add(R.drawable.lea_nature);
+        imagePromotions.add(R.drawable.laqueuille);
+        return imagePromotions;
+    }
+
     public void setMagasins(ArrayList<Magasin> magasins) {
         this.magasins = magasins;
     }

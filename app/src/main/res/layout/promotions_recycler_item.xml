@@ -31,6 +31,7 @@
             gl:start_color="@color/gradientOrange">
 
             <ImageView
+                android:id="@+id/imagePromo"
                 android:layout_width="88dp"
                 android:layout_height="75dp"
                 android:adjustViewBounds="true"
