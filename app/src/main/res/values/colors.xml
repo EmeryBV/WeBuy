@@ -37,6 +37,7 @@
 
     <!--gradient colors-->
     <color name="gradientJaune">#FFCE00</color>
+    <color name="bgImageMagasins">#FFFFFF</color>
 
 
 </resources>

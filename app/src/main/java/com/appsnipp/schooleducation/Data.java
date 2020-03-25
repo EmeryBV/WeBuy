@@ -34,6 +34,17 @@ public class Data {
         return magasins;
     }
 
+    public static ArrayList<String> getImageMagasins() {
+        ArrayList<String> imageMagasins = new ArrayList<>();
+        imageMagasins.add("@drawable/carrefour");
+        imageMagasins.add("@drawable/casino");
+        imageMagasins.add("@drawable/leclerc");
+        imageMagasins.add("@drawable/bricorama");
+        imageMagasins.add("@drawable/la_halle");
+        imageMagasins.add("@drawable/darty");
+        return imageMagasins;
+    }
+
     public void setMagasins(ArrayList<Magasin> magasins) {
         this.magasins = magasins;
     }

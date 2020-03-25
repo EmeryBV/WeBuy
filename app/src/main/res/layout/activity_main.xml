@@ -17,7 +17,10 @@
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header_main"
-        app:menu="@menu/activity_main_drawer" >
+        app:menu="@menu/activity_main_drawer"
+        android:backgroundTint="@color/contentBodyColor"
+        app:itemIconTint="@color/gradientViolet"
+        app:itemTextColor="@color/gradientViolet">
 
     </com.google.android.material.navigation.NavigationView>
 
