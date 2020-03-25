@@ -32,11 +32,6 @@
     <item android:title="">
         <menu>
             <item
-                android:id="@+id/nav_connexion"
-                android:icon="@drawable/ic_connexion"
-                android:title="@string/menu_connection" />
-
-            <item
                 android:id="@+id/nav_tools"
                 android:icon="@drawable/ic_settings"
                 android:title="@string/menu_option">
@@ -47,6 +42,15 @@
                 android:id="@+id/nav_dark_mode"
                 android:icon="@drawable/ic_theme"
                 android:title="@string/menu_DarkMode" />
+        </menu>
+    </item>
+
+    <item android:title="">
+        <menu>
+            <item
+                android:id="@+id/nav_connexion"
+                android:icon="@drawable/ic_connexion"
+                android:title="@string/menu_connection" />
         </menu>
     </item>
 

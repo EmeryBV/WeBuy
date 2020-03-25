@@ -35,7 +35,7 @@
     <string name="menu_DarkMode">Mode nuit</string>
     <string name="title_activity_login">Sign in</string>
     <string name="prompt_email">Email</string>
-    <string name="prompt_password">Password</string>
+    <string name="prompt_password">Mot de passe</string>
     <string name="action_sign_in">Sign in or register</string>
     <string name="action_sign_in_short">Sign in</string>
     <string name="welcome">"Welcome !"</string>
@@ -44,7 +44,7 @@
     <string name="login_failed">"Login failed"</string>
 
     <!--    amis-->
-    <string name="presentation_fragment_amis">Ici vous pouvez consulter les achats auxquelles vous vous êtes inscrits</string>
+    <string name="presentation_fragment_amis">Ici, vous pouvez ajouter des amis et les inviter à rejoindre des achats groupés.</string>
     <string name="se_connecter">Se Connecter</string>
 
     <!-- TODO: Remove or change this placeholder text -->
@@ -61,13 +61,13 @@
 
     <!--    Connexion-->
     <string name="titreConnection">"Connexion"</string>
-    <string name="inscrire"><u>"Pas de compte ? Inscrivez-vous"</u></string>
+    <string name="inscrire"><u>"Pas encore de compte ? Inscrivez-vous"</u></string>
 
     <!--    Inscription-->
     <string name="titreInscription">"Inscription"</string>
     <string name="prénom">"Prénom"</string>
     <string name="Nom">"Nom"</string>
     <string name="déjàInscrit"><u>"Déjà inscrit ? Connectez-vous"</u></string>
-    <string name="presentation_fragment_achats">Içi, vous pouvez consulter les groupes que vous avez rejoint.</string>
+    <string name="presentation_fragment_achats">Ici, vous pouvez consulter les groupes que vous avez rejoint.</string>
 
 </resources>

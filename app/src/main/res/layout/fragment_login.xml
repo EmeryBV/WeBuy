@@ -34,8 +34,8 @@
             android:inputType="textEmailAddress"
             android:layout_marginBottom="20dp"
             android:hint="@string/prompt_email"
-            android:textColorHint="@color/gris_log_sign"
-            android:textColor="@color/gris_log_sign"
+            android:textColorHint="@color/gradientViolet"
+            android:textColor="@color/gradientViolet"
             android:backgroundTint= "@color/gradientViolet"
             />
 
@@ -44,11 +44,11 @@
             android:id="@+id/password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColorHint="@color/gris_log_sign"
+            android:textColorHint="@color/gradientViolet"
             android:hint="@string/prompt_password"
             android:ems="10"
             android:layout_marginBottom="20dp"
-            android:textColor="@color/gris_log_sign"
+            android:textColor="@color/gradientViolet"
             android:backgroundTint= "@color/gradientViolet"
             />
 

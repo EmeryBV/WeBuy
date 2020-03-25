@@ -24,7 +24,7 @@
             android:background="@color/contentBodyColor"
             android:orientation="vertical"
             android:paddingLeft="50dp"
-            android:paddingTop="80dp"
+            android:paddingTop="110dp"
             android:paddingRight="50dp"
             android:paddingBottom="50dp"
             >
@@ -47,25 +47,7 @@
 
                 <TableRow
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <TextView
-                        android:id="@+id/firstNameTxt"
-                        android:layout_width="110dp"
-                        android:layout_height="wrap_content"
-                        android:text="@string/prénom"
-                        android:textColor="@color/gris_log_sign"
-
-                        />
-
-                    <TextView
-                        android:id="@+id/NameTxt"
-                        android:layout_width="110dp"
-                        android:layout_height="wrap_content"
-                        android:text="@string/Nom"
-                        android:textColor="@color/gris_log_sign" />
-
-                </TableRow>
+                    android:layout_height="match_parent"/>
 
                 <TableRow
                     android:layout_width="match_parent"
@@ -77,7 +59,10 @@
                         android:layout_height="50dp"
                         android:layout_marginBottom="20dp"
                         android:ems="10"
+                        android:hint="@string/prénom"
                         android:inputType="textPersonName"
+                        android:textColorHint="@color/gradientViolet"
+                        android:textColor="@color/gradientViolet"
                         android:backgroundTint= "@color/gradientViolet"
                         />
 
@@ -87,7 +72,10 @@
                         android:layout_height="50dp"
                         android:layout_marginBottom="20dp"
                         android:ems="10"
+                        android:hint="@string/Nom"
                         android:inputType="textPersonName"
+                        android:textColorHint="@color/gradientViolet"
+                        android:textColor="@color/gradientViolet"
                         android:backgroundTint= "@color/gradientViolet"
                         />
 
@@ -106,29 +94,18 @@
                 </TableRow>
             </TableLayout>
 
-            <TextView
-                android:id="@+id/emailtext"
-                android:layout_width="110dp"
-                android:layout_height="wrap_content"
-                android:text="@string/prompt_email"
-                android:textColor="@color/gris_log_sign" />
-
             <EditText
                 android:id="@+id/email"
                 android:layout_width="300dp"
                 android:layout_height="50dp"
                 android:layout_marginBottom="20dp"
                 android:ems="10"
+                android:hint="@string/prompt_email"
+                android:textColorHint="@color/gradientViolet"
+                android:textColor="@color/gradientViolet"
                 android:backgroundTint= "@color/gradientViolet"
                 android:inputType="textEmailAddress" />
 
-
-            <TextView
-                android:id="@+id/passwordTxt"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/prompt_password"
-                android:textColor="@color/gris_log_sign" />
 
             <EditText
                 android:id="@+id/password"
@@ -137,6 +114,9 @@
                 android:layout_marginBottom="20dp"
                 android:ems="10"
                 android:inputType="textPassword"
+                android:hint="@string/prompt_password"
+                android:textColorHint="@color/gradientViolet"
+                android:textColor="@color/gradientViolet"
                 android:backgroundTint= "@color/gradientViolet"
                 />
 
