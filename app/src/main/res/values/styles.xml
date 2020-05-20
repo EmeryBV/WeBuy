@@ -3,8 +3,8 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimary">@color/toolbar</item>
+        <item name="colorPrimaryDark">@color/toolbar</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
@@ -29,7 +29,6 @@
 
     <style name="parent.contentLayout">
         <item name="android:background">@color/contentBodyColor</item>
-        <item name="android:padding">@dimen/normalPadding</item>
     </style>
 
     <style name="viewParent.headerText">

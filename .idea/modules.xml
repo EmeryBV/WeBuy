@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/AndroidStudioProjects-WeBuy.iml" filepath="$PROJECT_DIR$/AndroidStudioProjects-WeBuy.iml" group="WeBuy" />
       <module fileurl="file://$PROJECT_DIR$/WeBuy.iml" filepath="$PROJECT_DIR$/WeBuy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/WeBuy-app.iml" filepath="$PROJECT_DIR$/app/WeBuy-app.iml" group="WeBuy/app" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

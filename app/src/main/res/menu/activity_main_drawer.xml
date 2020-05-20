@@ -6,46 +6,48 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
-            android:icon="@drawable/ic_home"
+            android:icon="@drawable/ic_accueil"
+            android:checked="true"
             android:title="@string/menu_accueil" />
         <item
             android:id="@+id/nav_shop"
-            android:icon="@drawable/ic_menu_magasins"
+            android:icon="@drawable/ic_magasins"
             android:title="@string/menu_magasins" />
-        <item
-            android:id="@+id/nav_buy"
-            android:icon="@drawable/caddie"
-            android:title="@string/menu_achats" />
-        <item
-            android:id="@+id/nav_connexion"
-            android:icon="@drawable/connection"
-            android:title="@string/menu_connection" />
+
+        <item android:title="">
+            <menu>
+                <item
+                    android:id="@+id/nav_buy"
+                    android:icon="@drawable/ic_achats"
+                    android:title="@string/menu_achats" />
+
+            </menu>
+        </item>
         <item
             android:id="@+id/nav_friends"
-            android:icon="@drawable/groupe"
+            android:icon="@drawable/ic_friends"
             android:title="@string/menu_amis" />
+        <item
+            android:id="@+id/nav_connexion"
+            android:icon="@drawable/ic_connexion"
+            android:title="@string/menu_connection" />
     </group>
-
-
 
     <item android:title="">
         <menu>
 
-
             <item
-            android:id="@+id/nav_tools"
-            android:icon="@drawable/ic_settings"
-            android:title="@string/menu_option">
+                android:id="@+id/nav_tools"
+                android:icon="@drawable/ic_settings"
+                android:title="@string/menu_option">
 
             </item>
 
-
             <item
-                android:id="@+id/dark_mode"
-                android:icon="@drawable/nuit"
+                android:id="@+id/nav_dark_mode"
+                android:icon="@drawable/ic_theme"
                 android:title="@string/menu_DarkMode" />
         </menu>
     </item>
-
 
 </menu>

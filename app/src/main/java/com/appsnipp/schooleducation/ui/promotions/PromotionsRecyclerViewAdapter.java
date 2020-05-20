@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.appsnipp.schooleducation.Data;
 import com.appsnipp.schooleducation.R;
 
 import java.util.ArrayList;
@@ -15,6 +16,7 @@ public class PromotionsRecyclerViewAdapter extends RecyclerView.Adapter<Promotio
 
     private int mIdMagasins;
     private ArrayList<Promotion> promotions = new ArrayList<>();
+    private ArrayList<Integer> imagePromotions = new ArrayList<>();
     private static DetecteurClicPromotionsRecycler sDetecteurClicPromotionsRecycler;
 
     public PromotionsRecyclerViewAdapter(int mIdMagasins, ArrayList<Promotion> promotions) {
@@ -22,12 +24,13 @@ public class PromotionsRecyclerViewAdapter extends RecyclerView.Adapter<Promotio
         for (Promotion promo: promotions){
             if (promo.getIdMagasin() == mIdMagasins) this.promotions.add(promo);
         }
+        imagePromotions = Data.getImagePromotions();
     }
 
     @Override
     public PromotionsRecyclerViewAdapter.ConteneurDeDonnee onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.promotions_recycler_item, parent, false);
+                .inflate(R.layout.accueil_promotions_recycler_item, parent, false);
         return new PromotionsRecyclerViewAdapter.ConteneurDeDonnee(view);
     }
 
@@ -38,7 +41,8 @@ public class PromotionsRecyclerViewAdapter extends RecyclerView.Adapter<Promotio
         conteneur.prix_sans_promo.setText("Prix hors promos: ");
         conteneur.quantite_min.setText("Quantité minimum: "+promotions.get(position).getQuantiteMin());
         conteneur.quantite_requise.setText("Quantité à acheter: "+promotions.get(position).getQuantiteRequise());
-        conteneur.idPromotion = promotions.get(position).getIdMagasin();
+        conteneur.idPromotion = promotions.get(position).getId();
+        conteneur.logo.setImageResource(imagePromotions.get(conteneur.idPromotion-1));
     }
 
     @Override
@@ -57,7 +61,7 @@ public class PromotionsRecyclerViewAdapter extends RecyclerView.Adapter<Promotio
 
         public ConteneurDeDonnee(View itemView) {
             super(itemView);
-            logo = (ImageView ) itemView.findViewById(R.id.imageView);
+            logo = (ImageView ) itemView.findViewById(R.id.imagePromo);
             nom = (TextView) itemView.findViewById(R.id.promotion);
             prix_avec_promo = (TextView) itemView.findViewById(R.id.prix_avec_promo);
             prix_sans_promo = (TextView) itemView.findViewById(R.id.prix_sans_promo);
