@@ -1,30 +1,35 @@
 package com.appsnipp.schooleducation.ui.accueil;
 
-import android.media.Image;
+import android.app.Activity;
+import android.app.ProgressDialog;
+import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
-
-import androidx.appcompat.app.ActionBarDrawerToggle;
-import androidx.core.view.GravityCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-import android.view.Gravity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.Toolbar;
+
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.appsnipp.schooleducation.Data;
 import com.appsnipp.schooleducation.MainActivity;
 import com.appsnipp.schooleducation.R;
+import com.appsnipp.schooleducation.ui.importer.AchatGroupe;
+import com.appsnipp.schooleducation.ui.importer.GroupeAdapter;
 import com.appsnipp.schooleducation.ui.magasins.MagasinsFragment;
 import com.appsnipp.schooleducation.ui.promotions.PromotionDetailFragment;
 import com.appsnipp.schooleducation.ui.promotions.PromotionsFragment;
+
+import java.util.ArrayList;
 
 public class AccueilFragment extends Fragment implements DetecteurClicAccueilRecycler {
 
@@ -33,21 +38,20 @@ public class AccueilFragment extends Fragment implements DetecteurClicAccueilRec
     private RecyclerView mAccueilRecyclerViewMagasins;
     private AccueilRecyclerViewMagasinsAdapter mAccueilAdapterMagasins;
     private RecyclerView.LayoutManager mLayoutManager;
-
     private RecyclerView mPromotionsRecyclerView;
     private AccueilRecyclerViewPromotionsAdapter mPromotionAdapter;
     private RecyclerView.LayoutManager mLayoutManager2;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
+        int i = 0 ;
         super.onCreate(savedInstanceState);
 
         View root = (View) inflater.inflate(R.layout.fragment_accueil, container, false);
         voirPlusMagasins = (TextView) root.findViewById(R.id.voir_plus);
-
         ImageView menu = (ImageView) root.findViewById(R.id.menu);
         ImageView accueil = (ImageView) root.findViewById(R.id.accueil);
+
 
         menu.setOnClickListener(new View.OnClickListener()
         {
@@ -78,6 +82,8 @@ public class AccueilFragment extends Fragment implements DetecteurClicAccueilRec
             }
         });
 
+
+
         mAccueilRecyclerViewMagasins = (RecyclerView) root.findViewById(R.id.recycler_view_magasins);
         mAccueilRecyclerViewMagasins.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(getContext(),RecyclerView.HORIZONTAL,false);
@@ -86,13 +92,16 @@ public class AccueilFragment extends Fragment implements DetecteurClicAccueilRec
         mAccueilRecyclerViewMagasins.setAdapter(mAccueilAdapterMagasins);
         mAccueilAdapterMagasins.setDetecteurDeClicSurRecycler(this);
 
+
         mPromotionsRecyclerView = (RecyclerView) root.findViewById(R.id.recycler_view_promotions);
         mPromotionsRecyclerView.setHasFixedSize(true);
         mLayoutManager2 = new LinearLayoutManager(getContext(),RecyclerView.HORIZONTAL,false);
         mPromotionsRecyclerView.setLayoutManager(mLayoutManager2);
         mPromotionAdapter = new AccueilRecyclerViewPromotionsAdapter(Data.getPromotions());
         mPromotionsRecyclerView.setAdapter(mPromotionAdapter);
+        mPromotionAdapter.notifyDataSetChanged();
         mPromotionAdapter.setDetecteurDeClicSurRecyclerPromos(this);
+
 
         return root;
     }
@@ -115,4 +124,8 @@ public class AccueilFragment extends Fragment implements DetecteurClicAccueilRec
         PromotionDetailFragment promotionsDetailFragment = PromotionDetailFragment.newInstance(position);
         getFragmentManager().beginTransaction().replace(R.id.fragment_container, promotionsDetailFragment).addToBackStack(null).commit();
     }
+
+
+
+
 }

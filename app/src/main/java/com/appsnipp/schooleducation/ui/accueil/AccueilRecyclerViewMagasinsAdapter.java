@@ -1,20 +1,22 @@
 package com.appsnipp.schooleducation.ui.accueil;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import androidx.recyclerview.widget.RecyclerView;
 import com.appsnipp.schooleducation.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
 public class AccueilRecyclerViewMagasinsAdapter extends RecyclerView.Adapter<AccueilRecyclerViewMagasinsAdapter.ConteneurDeDonnee> {
 
-    private ArrayList<Integer> imageMagasins = new ArrayList<>();
+    private ArrayList<String> imageMagasins = new ArrayList<>();
     private static DetecteurClicAccueilRecycler sDetecteurClicAccueilRecycler;
 
-    public AccueilRecyclerViewMagasinsAdapter(ArrayList<Integer> imageMagasins) {
+    public AccueilRecyclerViewMagasinsAdapter(ArrayList<String> imageMagasins) {
         this.imageMagasins = imageMagasins;
     }
 
@@ -27,8 +29,10 @@ public class AccueilRecyclerViewMagasinsAdapter extends RecyclerView.Adapter<Acc
 
     @Override
     public void onBindViewHolder(AccueilRecyclerViewMagasinsAdapter.ConteneurDeDonnee conteneur, int position) {
-        conteneur.logo.setImageResource(imageMagasins.get(position));
+        Picasso.get().load(imageMagasins.get(position)).into(conteneur.logo);
+        Log.i("IMAAAAGE", String.valueOf(imageMagasins.get(position)));
         conteneur.idMagasin = position;
+
     }
 
     @Override

@@ -1,6 +1,9 @@
 package com.appsnipp.schooleducation;
 
+import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 
@@ -11,21 +14,36 @@ import androidx.appcompat.app.AppCompatDelegate;
 
 import com.appsnipp.schooleducation.ui.achats.AchatsFragment;
 import com.appsnipp.schooleducation.ui.amis.AmisFragment;
+import com.appsnipp.schooleducation.ui.importer.AchatGroupe;
+import com.appsnipp.schooleducation.ui.importer.GroupeAdapter;
 import com.appsnipp.schooleducation.ui.utilisateurs.LoginFragment;
 import com.google.android.material.navigation.NavigationView;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
 
+import android.util.Log;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.ListView;
+import android.widget.Toast;
 
 import com.appsnipp.schooleducation.ui.magasins.MagasinsFragment;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+    private static ArrayList<AchatGroupe> groupes;
+    static GroupeAdapter adapter;
+    static ListView listeMagasinView;
+
+    private static ProgressDialog pDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,8 +58,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        MainActivity.GetAllMagasinsTask task = new MainActivity.GetAllMagasinsTask(this);
+        task.execute();
 
         onNavigationItemSelected(navigationView.getMenu().findItem(R.id.nav_home));
+
     }
 
     @Override
@@ -119,4 +140,46 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.openDrawer(GravityCompat.START);
     }
+
+
+    public class GetAllMagasinsTask extends AsyncTask<Void, Void, Void> {
+        private int i = 0;
+        private MainActivity activity;
+
+        public GetAllMagasinsTask(MainActivity a) {
+            this.activity = a;
+        }
+
+        @Override
+        protected void onPreExecute() {
+
+            super.onPreExecute();
+
+        }
+
+        @Override
+        protected Void doInBackground(Void... params) {
+            groupes = AchatGroupe.getAllGroupes();
+            Log.i("Groupe Activité", "groupes.size()" + groupes.size());
+            return null;
+        }
+
+        @Override
+        protected void onProgressUpdate(Void... progress) {
+            super.onProgressUpdate(progress);
+
+        }
+
+
+        @Override
+        protected void onPostExecute(Void result) {
+            super.onPostExecute(result);
+            adapter = new GroupeAdapter(activity, groupes);
+            recreate();
+
+
+        }
+
+    }
+
 }

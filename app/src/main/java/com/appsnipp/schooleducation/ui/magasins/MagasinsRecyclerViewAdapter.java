@@ -1,6 +1,8 @@
 package com.appsnipp.schooleducation.ui.magasins;
 
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +12,7 @@ import android.widget.TextView;
 import com.appsnipp.schooleducation.Data;
 import com.appsnipp.schooleducation.R;
 import com.appsnipp.schooleducation.ui.promotions.Promotion;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -17,7 +20,7 @@ public class MagasinsRecyclerViewAdapter extends RecyclerView.Adapter<MagasinsRe
 
     private ArrayList<Magasin> magasins;
     private ArrayList<Promotion> promotions;
-    private ArrayList<Integer> imageMagasins = new ArrayList<>();
+    private ArrayList<String> imageMagasins = new ArrayList<>();
     private static DetecteurClicMagasinsRecycler sDetecteurClicMagasinsRecycler;
 
     public MagasinsRecyclerViewAdapter(ArrayList<Magasin> magasins, ArrayList<Promotion> promotions) {
@@ -35,11 +38,12 @@ public class MagasinsRecyclerViewAdapter extends RecyclerView.Adapter<MagasinsRe
 
     @Override
     public void onBindViewHolder(ConteneurDeDonnee conteneur, int position) {
+        Log.i("ViewHolder",magasins.get(position).getNom());
         conteneur.nom.setText(magasins.get(position).getNom());
-        conteneur.adresse.setText("Adresse: "+magasins.get(position).getRue()+", "+magasins.get(position).getVille().toUpperCase());
+        conteneur.adresse.setText("Adresse: "+magasins.get(position).getAdresse());
         conteneur.promos.setText("Promos en cours: "+countPromos(position));
         conteneur.idMagasin = magasins.get(position).getId();
-        conteneur.logo.setImageResource(imageMagasins.get(conteneur.idMagasin-1));
+        Picasso.get().load(magasins.get(position).getLogo()).into(conteneur.logo);
     }
 
     private int countPromos(int position) {
