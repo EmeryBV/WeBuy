@@ -1,42 +1,34 @@
 package com.appsnipp.schooleducation.ui.magasins;
 
 import android.app.ProgressDialog;
-import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.ListView;
-import android.widget.Toast;
-
-import com.appsnipp.schooleducation.Data;
 import com.appsnipp.schooleducation.MainActivity;
 import com.appsnipp.schooleducation.R;
+import com.appsnipp.schooleducation.data.Data;
+import com.appsnipp.schooleducation.ui.AchatGroupe.GroupeAdapter;
 import com.appsnipp.schooleducation.ui.accueil.AccueilFragment;
-import com.appsnipp.schooleducation.ui.importer.AchatGroupe;
-import com.appsnipp.schooleducation.ui.importer.GroupeAdapter;
 import com.appsnipp.schooleducation.ui.promotions.PromotionsFragment;
-
-import java.util.ArrayList;
 
 public class MagasinsFragment extends Fragment implements DetecteurClicMagasinsRecycler {
 
-    private ArrayList<AchatGroupe> groupes;
+
     GroupeAdapter adapter;
     ListView listeMagasinView;
     int i = 0;
     private ProgressDialog pDialog;
 
-    private Data mDatas;
     private RecyclerView mMagasinsRecyclerView;
     private MagasinsRecyclerViewAdapter mMagasinAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
@@ -74,7 +66,6 @@ public class MagasinsFragment extends Fragment implements DetecteurClicMagasinsR
         mMagasinsRecyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(getContext());
         mMagasinsRecyclerView.setLayoutManager(mLayoutManager);
-        Log.i("teeeeeest",String.valueOf(Data.getGroupe().get(0).getDuree()));
         mMagasinAdapter = new MagasinsRecyclerViewAdapter(Data.getMagasins(),Data.getPromotions());
         mMagasinsRecyclerView.setAdapter(mMagasinAdapter);
         mMagasinAdapter.setDetecteurDeClicSurRecycler(this);

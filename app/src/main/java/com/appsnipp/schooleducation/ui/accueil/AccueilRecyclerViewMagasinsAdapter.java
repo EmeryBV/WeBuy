@@ -1,11 +1,12 @@
 package com.appsnipp.schooleducation.ui.accueil;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.appsnipp.schooleducation.R;
 import com.squareup.picasso.Picasso;
 
@@ -30,7 +31,7 @@ public class AccueilRecyclerViewMagasinsAdapter extends RecyclerView.Adapter<Acc
     @Override
     public void onBindViewHolder(AccueilRecyclerViewMagasinsAdapter.ConteneurDeDonnee conteneur, int position) {
         Picasso.get().load(imageMagasins.get(position)).into(conteneur.logo);
-        Log.i("IMAAAAGE", String.valueOf(imageMagasins.get(position)));
+
         conteneur.idMagasin = position;
 
     }

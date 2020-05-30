@@ -1,16 +1,16 @@
 package com.appsnipp.schooleducation.ui.utilisateurs;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.text.method.PasswordTransformationMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.fragment.app.Fragment;
 
 import com.appsnipp.schooleducation.MainActivity;
 import com.appsnipp.schooleducation.R;
@@ -38,6 +38,7 @@ public class LoginFragment extends Fragment {
 
         ImageView menu = (ImageView) root.findViewById(R.id.menu);
         ImageView accueil = (ImageView) root.findViewById(R.id.accueil);
+        Button connexion = root.findViewById(R.id.se_connecter);
 
         menu.setOnClickListener(new View.OnClickListener()
         {
@@ -49,6 +50,16 @@ public class LoginFragment extends Fragment {
         });
 
         accueil.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                AccueilFragment fragment = new AccueilFragment();
+                getFragmentManager().beginTransaction().replace(R.id.fragment_container,fragment).commit();
+            }
+        });
+
+        connexion.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View view)

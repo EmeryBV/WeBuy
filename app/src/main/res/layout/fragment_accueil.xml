@@ -57,7 +57,9 @@
                             android:id="@+id/Bienvenue"
                             style="@style/viewParent.headerText.HomeCardTitle"
                             android:text="@string/welcome"
-                            android:textSize="25dp" />
+                            android:textSize="40dp"
+                            android:fontFamily="cursive"
+                            />
 
                         <ImageView
                             android:id="@+id/imageCardView"

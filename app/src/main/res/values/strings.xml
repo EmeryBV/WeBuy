@@ -38,10 +38,14 @@
     <string name="prompt_password">Mot de passe</string>
     <string name="action_sign_in">Sign in or register</string>
     <string name="action_sign_in_short">Sign in</string>
-    <string name="welcome">"Welcome !"</string>
+    <string name="welcome">"Bienvenue !"</string>
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+
+    <!--    DetailPromo-->
+    <string name="Join_group">Créer un groupe</string>
+
 
     <!--    amis-->
     <string name="presentation_fragment_amis">Ici, vous pouvez ajouter des amis et les inviter à rejoindre des achats groupés.</string>

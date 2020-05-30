@@ -1,17 +1,16 @@
 package com.appsnipp.schooleducation.ui.magasins;
 
-import androidx.recyclerview.widget.RecyclerView;
-
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.appsnipp.schooleducation.Data;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.appsnipp.schooleducation.R;
-import com.appsnipp.schooleducation.ui.promotions.Promotion;
+import com.appsnipp.schooleducation.data.Data;
+import com.appsnipp.schooleducation.ui.promotions.AchatGroupe;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -19,11 +18,11 @@ import java.util.ArrayList;
 public class MagasinsRecyclerViewAdapter extends RecyclerView.Adapter<MagasinsRecyclerViewAdapter.ConteneurDeDonnee> {
 
     private ArrayList<Magasin> magasins;
-    private ArrayList<Promotion> promotions;
+    private ArrayList<AchatGroupe> promotions;
     private ArrayList<String> imageMagasins = new ArrayList<>();
     private static DetecteurClicMagasinsRecycler sDetecteurClicMagasinsRecycler;
 
-    public MagasinsRecyclerViewAdapter(ArrayList<Magasin> magasins, ArrayList<Promotion> promotions) {
+    public MagasinsRecyclerViewAdapter(ArrayList<Magasin> magasins, ArrayList<AchatGroupe> promotions) {
         this.magasins = magasins;
         this.promotions = promotions;
         imageMagasins = Data.getImageMagasins();
@@ -38,18 +37,17 @@ public class MagasinsRecyclerViewAdapter extends RecyclerView.Adapter<MagasinsRe
 
     @Override
     public void onBindViewHolder(ConteneurDeDonnee conteneur, int position) {
-        Log.i("ViewHolder",magasins.get(position).getNom());
         conteneur.nom.setText(magasins.get(position).getNom());
         conteneur.adresse.setText("Adresse: "+magasins.get(position).getAdresse());
         conteneur.promos.setText("Promos en cours: "+countPromos(position));
-        conteneur.idMagasin = magasins.get(position).getId();
+        conteneur.idMagasin = magasins.get(position).getId_magasin();
         Picasso.get().load(magasins.get(position).getLogo()).into(conteneur.logo);
     }
 
     private int countPromos(int position) {
         int total = 0;
-        for (Promotion promo: promotions) {
-            if (promo.getIdMagasin() == magasins.get(position).getId()) total++;
+        for (AchatGroupe promo: promotions) {
+            if (promo.getId() == magasins.get(position).getId()) total++;
         }
         return total;
     }

@@ -5,9 +5,9 @@
     <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcherwebuy"
+        android:icon="@drawable/renard"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcherwebuy_foreground"
+        android:roundIcon="@drawable/renard"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity

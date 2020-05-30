@@ -1,4 +1,4 @@
-package com.appsnipp.schooleducation.ui.importer;
+package com.appsnipp.schooleducation.data;
 
 /**
  * Created by nasredine on 26/02/2018.
@@ -6,7 +6,7 @@ package com.appsnipp.schooleducation.ui.importer;
 
 public class BaseWeBuy {
 
-    public static String api_url = "https://webuy.sciences.univ-tours.fr/api/v1";;
+    public static String api_url = "http://192.168.0.11:8080/";;
 
     private int id;
 

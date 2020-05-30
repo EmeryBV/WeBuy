@@ -1,31 +1,37 @@
 package com.appsnipp.schooleducation.ui.promotions;
 
-import androidx.recyclerview.widget.RecyclerView;
+import android.graphics.Paint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.appsnipp.schooleducation.Data;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.appsnipp.schooleducation.R;
+import com.appsnipp.schooleducation.data.Data;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
 public class PromotionsRecyclerViewAdapter extends RecyclerView.Adapter<PromotionsRecyclerViewAdapter.ConteneurDeDonnee> {
 
     private int mIdMagasins;
-    private ArrayList<Promotion> promotions = new ArrayList<>();
-    private ArrayList<Integer> imagePromotions = new ArrayList<>();
+    private ArrayList<AchatGroupe> promotions = new ArrayList<>();
+    private ArrayList<String> imagePromotions = new ArrayList<>();
     private static DetecteurClicPromotionsRecycler sDetecteurClicPromotionsRecycler;
 
-    public PromotionsRecyclerViewAdapter(int mIdMagasins, ArrayList<Promotion> promotions) {
+    public PromotionsRecyclerViewAdapter(int mIdMagasins, ArrayList<AchatGroupe> promotions) {
         this.mIdMagasins = mIdMagasins;
-        for (Promotion promo: promotions){
-            if (promo.getIdMagasin() == mIdMagasins) this.promotions.add(promo);
+
+            for (AchatGroupe promo : promotions) {
+            if (mIdMagasins == 0) this.promotions.add(promo);else if(promo.getId_magasin() == mIdMagasins) this.promotions.add(promo);
         }
-        imagePromotions = Data.getImagePromotions();
-    }
+        }
+
+
+
 
     @Override
     public PromotionsRecyclerViewAdapter.ConteneurDeDonnee onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -36,13 +42,19 @@ public class PromotionsRecyclerViewAdapter extends RecyclerView.Adapter<Promotio
 
     @Override
     public void onBindViewHolder(PromotionsRecyclerViewAdapter.ConteneurDeDonnee conteneur, int position) {
-        conteneur.nom.setText(promotions.get(position).getNomPromotion());
-        conteneur.prix_avec_promo.setText("Prix promos: "+promotions.get(position).getPrixAvecPromo());
-        conteneur.prix_sans_promo.setText("Prix hors promos: ");
-        conteneur.quantite_min.setText("Quantité minimum: "+promotions.get(position).getQuantiteMin());
-        conteneur.quantite_requise.setText("Quantité à acheter: "+promotions.get(position).getQuantiteRequise());
-        conteneur.idPromotion = promotions.get(position).getId();
-        conteneur.logo.setImageResource(imagePromotions.get(conteneur.idPromotion-1));
+
+
+        for (int i = 0; i < Data.getProduits().size(); i++) {
+            if (Data.getProduits().get(i).getId_produit() == promotions.get(position).getId_produit()) {
+                conteneur.nom.setText(Data.getProduits().get(i).getNom());
+                conteneur.prix_sans_promo.setText(Data.getProduits().get(i).getPrix() + " €");
+                Picasso.get().load(Data.getImageProduits().get(i)).into(conteneur.logo);
+            }
+        }
+        conteneur.prix_avec_promo.setText(promotions.get(position).getPrix_avec_promo()+ " €");
+        conteneur.quantite_min.setText("Quantité minimum: " + promotions.get(position).getQuantite_min());
+        conteneur.quantite_requise.setText("Quantité à acheter: " + promotions.get(position).getQuantite_min());
+        conteneur.idPromotion = promotions.get(position).getId_promotion();
     }
 
     @Override
@@ -50,31 +62,33 @@ public class PromotionsRecyclerViewAdapter extends RecyclerView.Adapter<Promotio
         return promotions.size();
     }
 
-    public static class ConteneurDeDonnee extends RecyclerView.ViewHolder implements View.OnClickListener {
-        ImageView logo;
-        TextView nom;
-        TextView prix_avec_promo;
-        TextView prix_sans_promo;
-        TextView quantite_min;
-        TextView quantite_requise;
-        int idPromotion;
+public static class ConteneurDeDonnee extends RecyclerView.ViewHolder implements View.OnClickListener {
+    ImageView logo;
+    TextView nom;
+    TextView prix_avec_promo;
+    TextView prix_sans_promo;
+    TextView quantite_min;
+    TextView quantite_requise;
+    int idPromotion;
 
-        public ConteneurDeDonnee(View itemView) {
-            super(itemView);
-            logo = (ImageView ) itemView.findViewById(R.id.imagePromo);
-            nom = (TextView) itemView.findViewById(R.id.promotion);
-            prix_avec_promo = (TextView) itemView.findViewById(R.id.prix_avec_promo);
-            prix_sans_promo = (TextView) itemView.findViewById(R.id.prix_sans_promo);
-            quantite_min = (TextView) itemView.findViewById(R.id.quantite_min);
-            quantite_requise = (TextView) itemView.findViewById(R.id.quantite_requise);
-            itemView.setOnClickListener(this);
-        }
-
-        @Override
-        public void onClick(View v) {
-            sDetecteurClicPromotionsRecycler.clicSurRecyclerItem(idPromotion,v);
-        }
+    public ConteneurDeDonnee(View itemView) {
+        super(itemView);
+        logo = (ImageView) itemView.findViewById(R.id.imagePromo);
+        nom = (TextView) itemView.findViewById(R.id.promotion);
+        prix_avec_promo = (TextView) itemView.findViewById(R.id.prix_avec_promo);
+        prix_sans_promo = (TextView) itemView.findViewById(R.id.prix_sans_promo);
+        prix_sans_promo.setPaintFlags(prix_sans_promo.getPaintFlags()| Paint.STRIKE_THRU_TEXT_FLAG);
+        quantite_min = (TextView) itemView.findViewById(R.id.quantite_min);
+        quantite_requise = (TextView) itemView.findViewById(R.id.quantite_requise);
+        itemView.setOnClickListener(this);
     }
+
+    @Override
+    public void onClick(View v) {
+        sDetecteurClicPromotionsRecycler.clicSurRecyclerItem(idPromotion, v);
+    }
+
+}
 
     public void setDetecteurDeClicSurRecycler(DetecteurClicPromotionsRecycler detecteurClicPromotionsRecycler) {
         this.sDetecteurClicPromotionsRecycler = detecteurClicPromotionsRecycler;

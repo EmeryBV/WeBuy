@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:gl="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.accueil.AccueilFragment"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/gradientOrange2"
+
+        >
+
+        <TextView
+            android:id="@+id/Webuy"
+            android:layout_width="match_parent"
+            android:layout_height="278dp"
+            android:layout_marginLeft="4dp"
+            android:gravity="center|center_vertical"
+            android:paddingTop="100dp"
+            android:text="WeBuy"
+            android:fontFamily="cursive"
+            android:textColor="@color/whiteBodyColor"
+            android:textSize="70dp" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="130dp"
+            android:layout_height="186dp"
+            android:gravity="center"
+            android:layout_gravity="center"
+
+            gl:srcCompat="@drawable/renard" />
+    </LinearLayout>
+
+</LinearLayout>

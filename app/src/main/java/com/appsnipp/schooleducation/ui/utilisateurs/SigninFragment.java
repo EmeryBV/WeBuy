@@ -1,9 +1,6 @@
 package com.appsnipp.schooleducation.ui.utilisateurs;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.text.method.PasswordTransformationMethod;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +8,8 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.fragment.app.Fragment;
 
 import com.appsnipp.schooleducation.MainActivity;
 import com.appsnipp.schooleducation.R;

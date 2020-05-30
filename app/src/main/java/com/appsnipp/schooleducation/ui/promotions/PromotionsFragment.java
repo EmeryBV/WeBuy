@@ -1,48 +1,52 @@
 package com.appsnipp.schooleducation.ui.promotions;
 
 import android.os.Bundle;
-import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.appsnipp.schooleducation.Data;
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.appsnipp.schooleducation.MainActivity;
 import com.appsnipp.schooleducation.R;
+import com.appsnipp.schooleducation.data.Data;
 import com.appsnipp.schooleducation.ui.accueil.AccueilFragment;
 
 public class PromotionsFragment extends Fragment implements DetecteurClicPromotionsRecycler {
 
-    private Data mDatas;
+
     //private int mIdMagasin;
+    private static PromotionsFragment promotionsFragment = new PromotionsFragment();
+    private int var;
     private RecyclerView mPromotionsRecyclerView;
     private PromotionsRecyclerViewAdapter mPromotionAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
 
     public static PromotionsFragment newInstance(int index) {
-        PromotionsFragment promotionsFragment = new PromotionsFragment();
 
         //Recupération de l’index à afficher dans les arguments d’appel
         Bundle args = new Bundle();
         args.putInt("idMagasin", index);
         promotionsFragment.setArguments(args);
-
         return promotionsFragment;
+
     }
 
     public int getIdMagasinEnCours() {
-        return getArguments().getInt("idMagasin", 0);
+        return getArguments().getInt("idMagasin", 1);
     }
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         View root = inflater.inflate(R.layout.fragment_promotions, container, false);
+
 
         ImageView menu = (ImageView) root.findViewById(R.id.menu);
         ImageView accueil = (ImageView) root.findViewById(R.id.accueil);
@@ -70,7 +74,8 @@ public class PromotionsFragment extends Fragment implements DetecteurClicPromoti
         mPromotionsRecyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(getContext());
         mPromotionsRecyclerView.setLayoutManager(mLayoutManager);
-        mPromotionAdapter = new PromotionsRecyclerViewAdapter(getIdMagasinEnCours(),Data.getPromotions());
+        Log.e("","IDMAGASIN" + promotionsFragment.getIdMagasinEnCours());
+        mPromotionAdapter = new PromotionsRecyclerViewAdapter(getIdMagasinEnCours(), Data.getPromotions());
         mPromotionsRecyclerView.setAdapter(mPromotionAdapter);
         mPromotionAdapter.setDetecteurDeClicSurRecycler(this);
 

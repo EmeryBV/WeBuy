@@ -23,7 +23,7 @@
             android:layout_width="wrap_content"
             android:layout_height="26dp"
             android:layout_gravity="right"
-            android:paddingLeft="330dp"
+            android:paddingLeft="270dp"
             android:clickable="true"
             android:src="@drawable/ic_home"
             android:tint="@color/gradientViolet" />

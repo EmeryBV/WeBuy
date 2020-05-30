@@ -1,54 +1,45 @@
 package com.appsnipp.schooleducation;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
-
-import com.appsnipp.schooleducation.ui.accueil.AccueilFragment;
-
-import androidx.fragment.app.Fragment;
-import androidx.appcompat.app.AppCompatDelegate;
-
-import com.appsnipp.schooleducation.ui.achats.AchatsFragment;
-import com.appsnipp.schooleducation.ui.amis.AmisFragment;
-import com.appsnipp.schooleducation.ui.importer.AchatGroupe;
-import com.appsnipp.schooleducation.ui.importer.GroupeAdapter;
-import com.appsnipp.schooleducation.ui.utilisateurs.LoginFragment;
-import com.google.android.material.navigation.NavigationView;
-import androidx.core.view.GravityCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentTransaction;
-
-import android.util.Log;
-import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.AdapterView;
-import android.widget.Button;
-import android.widget.ListView;
-import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
+
+import com.appsnipp.schooleducation.ui.AchatGroupe.GroupeAdapter;
+import com.appsnipp.schooleducation.ui.accueil.AccueilFragment;
+import com.appsnipp.schooleducation.ui.achats.AchatsFragment;
+import com.appsnipp.schooleducation.ui.amis.AmisFragment;
+import com.appsnipp.schooleducation.ui.magasins.Magasin;
 import com.appsnipp.schooleducation.ui.magasins.MagasinsFragment;
+import com.appsnipp.schooleducation.ui.produits.Produit;
+import com.appsnipp.schooleducation.ui.promotions.AchatGroupe;
+import com.appsnipp.schooleducation.ui.utilisateurs.LoginFragment;
+import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-    private static ArrayList<AchatGroupe> groupes;
+    public ArrayList<com.appsnipp.schooleducation.ui.AchatGroupe.AchatGroupe> groupes;
+    public ArrayList<Magasin> magasins;
+    private ArrayList<AchatGroupe> promotions;
+    private ArrayList<Produit> produits;
     static GroupeAdapter adapter;
-    static ListView listeMagasinView;
-
     private static ProgressDialog pDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
 
+        super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -56,12 +47,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setDarkMode(getWindow());
         setContentView(R.layout.activity_main);
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
-        MainActivity.GetAllMagasinsTask task = new MainActivity.GetAllMagasinsTask(this);
+
+        GetAllMagasinsTask task = new GetAllMagasinsTask(this);
         task.execute();
 
-        onNavigationItemSelected(navigationView.getMenu().findItem(R.id.nav_home));
 
     }
 
@@ -73,6 +62,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else {
             super.onBackPressed();
         }
+
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
@@ -80,10 +70,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         Fragment fragment = null;
+
         switch (item.getItemId()) {
             case R.id.nav_home:
                 fragment = new AccueilFragment();
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,fragment).addToBackStack(null).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,fragment).addToBackStack(null).commitAllowingStateLoss();;
                 break;
             case R.id.nav_shop:
                 fragment = new MagasinsFragment();
@@ -152,15 +143,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         @Override
         protected void onPreExecute() {
-
+            Fragment splashFragment = new splashScreen();
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,splashFragment).commit();
             super.onPreExecute();
 
         }
 
         @Override
         protected Void doInBackground(Void... params) {
-            groupes = AchatGroupe.getAllGroupes();
-            Log.i("Groupe Activité", "groupes.size()" + groupes.size());
+            groupes = com.appsnipp.schooleducation.ui.AchatGroupe.AchatGroupe.getAllGroupes();
+            magasins = Magasin.getAllMagasins();
+            promotions = AchatGroupe.getAllPromotions();
+            produits=Produit.getAllProduit();
+
             return null;
         }
 
@@ -174,9 +169,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         @Override
         protected void onPostExecute(Void result) {
             super.onPostExecute(result);
-            adapter = new GroupeAdapter(activity, groupes);
-            recreate();
-
+            adapter = new GroupeAdapter(activity, groupes,magasins,promotions,produits);
+            NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+            navigationView.setNavigationItemSelectedListener(activity);
+            onNavigationItemSelected(navigationView.getMenu().findItem(R.id.nav_home));
 
         }
 
